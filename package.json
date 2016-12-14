@@ -36,6 +36,7 @@
     "react-modal": "^1.4.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.4.1",
+    "react-star-rating-component": "^1.2.2",
     "react-tooltip": "^3.1.6",
     "redux": "^3.5.2",
     "redux-promise": "^0.5.3",

@@ -88,5 +88,6 @@ ENV/
 # Rope project settings
 .ropeproject
 
-*.js
 node_modules/*
+static/bundle/*.js
+*.log

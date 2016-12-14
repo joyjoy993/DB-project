@@ -7,6 +7,7 @@ import {fetchCurrentUser} from '../actions/index';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import SuggestionPost from '../components/suggestion-post';
+import StarRatingComponent from 'react-star-rating-component';
 
 class RecipeReviewListing extends Component {
 
@@ -40,7 +41,12 @@ class RecipeReviewListing extends Component {
                                             {"review user: " + review.user}
                                           </p>
                                           <p>
-                                            {"rating: " + review.rate}
+                                            <StarRatingComponent
+                                                editing={false}
+                                                name="rate1" 
+                                                starCount={5}
+                                                value={review.rate}
+                                            />
                                           </p>
                                             {review.suggestion ? 
                                                 <p>

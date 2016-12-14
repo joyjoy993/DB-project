@@ -6,6 +6,7 @@ import {Form, FormGroup, Col, Button, FormControl, ControlLabel, Checkbox, optio
 import Dropzone from 'react-dropzone';
 import request from 'superagent';
 import { browserHistory, Link } from 'react-router';
+import StarRatingComponent from 'react-star-rating-component';
 
 class ReviewPost extends Component {
 
@@ -19,6 +20,10 @@ class ReviewPost extends Component {
             status: null,
             uploadedFileCloudinaryUrl: null
         };
+    }
+
+    onStarClick(nextValue, prevValue, name) {
+        this.setState({rate: nextValue});
     }
 
     onImageDrop(files) {
@@ -98,7 +103,12 @@ class ReviewPost extends Component {
                     rate
                     </Col>
                     <Col sm={10}>
-                    <FormControl type="number" placeholder="rate" value={this.state.rate} onChange={e => this.setState({ rate: e.target.value })}/>
+                        <StarRatingComponent 
+                            name="rate1" 
+                            starCount={5}
+                            value={this.state.rate}
+                            onStarClick={this.onStarClick.bind(this)}
+                        />
                     </Col>
                 </FormGroup>
 
