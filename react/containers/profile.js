@@ -33,78 +33,78 @@ class Profile extends Component {
             <div style={styles.cards}>
                 <NavigationBar />
                 <Tab.Container id="left-tabs-example" defaultActiveKey="profile">
-                <Row className="clearfix">
-                  <Col sm={4}>
-                    <Nav bsStyle="pills" stacked>
-                      <NavItem eventKey="profile">
-                        Your Profile
-                      </NavItem>
-                      <NavItem eventKey="groups">
-                        Your Groups
-                      </NavItem>
-                      <NavItem eventKey="creategroup">
-                        Create Your Group!
-                      </NavItem>
-                      <NavItem eventKey="userevents">
-                        Your Events
-                      </NavItem>
-                      <NavItem eventKey="posts">
-                        Your Posts
-                      </NavItem>
-                      <NavItem eventKey="getpost">
-                        Get Post Now!
-                      </NavItem>
-                    </Nav>
-                  </Col>
-                  <Col sm={8}>
-                    <Tab.Content animation>
-                      <Tab.Pane eventKey="profile">
-                        {
-                            this.props.user ?
-                            <ProfileDetail user={this.props.user}/>
-                            :
-                            <CircularProgress size={60} style={{margin: "auto", display: "block"}}/>
-                        }
-                      </Tab.Pane>
+                    <Row className="clearfix">
+                        <Col sm={4}>
+                            <Nav bsStyle="pills" stacked>
+                                <NavItem eventKey="profile">
+                                Your Profile
+                                </NavItem>
+                                <NavItem eventKey="groups">
+                                Your Groups
+                                </NavItem>
+                                <NavItem eventKey="creategroup">
+                                Create Your Group!
+                                </NavItem>
+                                <NavItem eventKey="userevents">
+                                Your Events
+                                </NavItem>
+                                <NavItem eventKey="posts">
+                                Your Posts
+                                </NavItem>
+                                <NavItem eventKey="getpost">
+                                Get Post Now!
+                                </NavItem>
+                            </Nav>
+                        </Col>
+                        <Col sm={8}>
+                            <Tab.Content animation>
+                                <Tab.Pane eventKey="profile">
+                                {
+                                    this.props.user ?
+                                    <ProfileDetail user={this.props.user}/>
+                                    :
+                                    <CircularProgress size={60} style={{margin: "auto", display: "block"}}/>
+                                }
+                                </Tab.Pane>
 
-                      <Tab.Pane eventKey="groups">
-                        {
-                            this.props.groups ?
-                            <GroupDetail groups={this.props.groups}/>
-                            :
-                            <CircularProgress size={60} style={{margin: "auto", display: "block"}}/>
-                        }
-                      </Tab.Pane>
+                                <Tab.Pane eventKey="groups">
+                                    {
+                                        this.props.groups ?
+                                        <GroupDetail groups={this.props.groups}/>
+                                        :
+                                        <CircularProgress size={60} style={{margin: "auto", display: "block"}}/>
+                                    }
+                                </Tab.Pane>
 
-                      <Tab.Pane eventKey="creategroup">
-                        <GroupCreate/>
-                      </Tab.Pane>
+                                <Tab.Pane eventKey="creategroup">
+                                    <GroupCreate/>
+                                </Tab.Pane>
 
-                      <Tab.Pane eventKey="userevents">
-                        {
-                            this.props.userevents ?
-                            <UserEvents userevents={this.props.userevents}/>
-                            :
-                            <CircularProgress size={5} style={{margin: "auto", display: "block"}}/>
-                        }
-                      </Tab.Pane>
+                                <Tab.Pane eventKey="userevents">
+                                    {
+                                        this.props.userevents ?
+                                        <UserEvents userevents={this.props.userevents}/>
+                                        :
+                                        <CircularProgress size={5} style={{margin: "auto", display: "block"}}/>
+                                    }
+                                </Tab.Pane>
 
-                      <Tab.Pane eventKey="posts">
-                        {
-                            this.props.posts ?
-                            <PostDetail posts={this.props.posts}/>
-                            :
-                            <CircularProgress size={60} style={{margin: "auto", display: "block"}}/>
-                        }
-                      </Tab.Pane>
+                                <Tab.Pane eventKey="posts">
+                                    {
+                                        this.props.posts ?
+                                        <PostDetail posts={this.props.posts}/>
+                                        :
+                                        <CircularProgress size={60} style={{margin: "auto", display: "block"}}/>
+                                    }
+                                </Tab.Pane>
 
-                      <Tab.Pane eventKey="getpost">
-                        <RecipePost/>
-                      </Tab.Pane>
-                    </Tab.Content>
-                  </Col>
-                </Row>
-              </Tab.Container>
+                                <Tab.Pane eventKey="getpost">
+                                    <RecipePost/>
+                                </Tab.Pane>
+                            </Tab.Content>
+                      </Col>
+                    </Row>
+                </Tab.Container>
             </div>
         )
     }

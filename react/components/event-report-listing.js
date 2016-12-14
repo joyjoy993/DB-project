@@ -1,12 +1,7 @@
 import React, {Component} from 'react';
-import CircularProgress from 'material-ui/CircularProgress';
 import {Modal, Tab, Col, Row, Nav, NavItem, Panel, PanelGroup, Button, Collapse, Well} from 'react-bootstrap';
-import {cardStyles as styles} from '../styles/recipe-listing-cards.style';
-import {Link} from 'react-router';
-import axios from 'axios';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import ReportPost from '../components/report-post';
 import {fetchEventReport} from '../actions/index';
 
 class EventReportListing extends Component {

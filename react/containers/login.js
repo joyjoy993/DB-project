@@ -4,7 +4,6 @@ import {bindActionCreators} from 'redux';
 import {Form, FormGroup, Col, Button, FormControl, ControlLabel, Checkbox, Tabs, Tab} from 'react-bootstrap';
 import axios from 'axios';
 import { browserHistory, Link } from 'react-router'
-//import {Tabs, Tab} from 'material-ui/Tabs';
 import {styles} from '../styles/card-detail.style.js';
 import {Modal} from 'react-bootstrap';
 

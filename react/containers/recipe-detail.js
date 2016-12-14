@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {fetchRecipe, fetchReviews} from '../actions/index';
 import CircularProgress from 'material-ui/CircularProgress';
-import {Link} from 'react-router';
 import {Modal, Collapse, Button} from 'react-bootstrap';
 import Chip from 'material-ui/Chip';
 import {cardStyles as styles} from '../styles/recipe-listing-cards.style';
@@ -22,7 +21,8 @@ class RecipeDetail extends Component {
         this.props.fetchReviews(this.props.params.id);
         this.state = {
             showModal: true,
-            collapse_open: false
+            collapse_open: false,
+            showreviews: false
 
         };
         document.body.style.overflowY = "hidden";
@@ -105,26 +105,26 @@ class RecipeDetail extends Component {
                                                 {this.props.recipe.uname == null ? "null" : this.props.recipe.uname}
                                             </TableRowColumn>
                                         </TableRow>
-                                        <TableRow selectable={false}>
-                                            <TableRowColumn style={styles.tableRow}>
-                                                user reviews
-                                            </TableRowColumn>
-                                            <TableRowColumn style={styles.tableRow}>
-                                                {this.props.reviews ?
-                                                    <RecipeReviewListing reviews={this.props.reviews} uname={this.props.recipe.uname}/>
-                                                    :
-                                                    <CircularProgress size={60} style={{margin: "auto", display: "block"}}/>
-                                                }
-                                            </TableRowColumn>
-                                        </TableRow>
                                     </TableBody>
                                 </Table>
-                                <Button onClick={() => this.setState({ collapse_open: !this.state.collapse_open })}>
-                                                    Add Review!
+                                <Button onClick={() => this.setState({ showreviews: !this.state.showreviews })}>
+                                                    Show Reviews!
                                 </Button>
-                                <Collapse in={this.state.collapse_open}>
+                                <Collapse in={this.state.showreviews}>
                                     <div>
-                                        <ReviewPost recipeid={this.props.params.id}/>
+                                        {this.props.reviews ?
+                                            <RecipeReviewListing reviews={this.props.reviews} uname={this.props.recipe.uname}/>
+                                            :
+                                            <CircularProgress size={60} style={{margin: "auto", display: "block"}}/>
+                                        }
+                                        <Button onClick={() => this.setState({ collapse_open: !this.state.collapse_open })}>
+                                                            Add Review!
+                                        </Button>
+                                        <Collapse in={this.state.collapse_open}>
+                                            <div>
+                                                <ReviewPost recipeid={this.props.params.id}/>
+                                            </div>
+                                        </Collapse>
                                     </div>
                                 </Collapse>
                             </CardText>

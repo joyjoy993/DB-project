@@ -3,7 +3,6 @@ import axios from 'axios';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {Form, FormGroup, Col, Button, FormControl, ControlLabel, Checkbox, option} from 'react-bootstrap';
-import request from 'superagent';
 
 class GroupCreate extends Component {
 

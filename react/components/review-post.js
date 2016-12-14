@@ -39,17 +39,17 @@ class ReviewPost extends Component {
                          .field('file', file);
 
         upload.end((err, response) => {
-          if (err) {
-            console.error(err);
-          }
-          var t = JSON.parse(response.text);
+            if (err) {
+                console.error(err);
+            }
+            var t = JSON.parse(response.text);
 
-          if (t.filename !== '') {
+            if (t.filename !== '') {
             //console.log(t.filename);
-            this.setState({
-              uploadedFileCloudinaryUrl: t.filename
-            });
-          }
+                this.setState({
+                    uploadedFileCloudinaryUrl: t.filename
+                });
+            }
         });
     }
 
@@ -71,14 +71,22 @@ class ReviewPost extends Component {
 
         return (
             <div>
-            <div className="FileUpload">
-          <Dropzone
-            onDrop={this.onImageDrop.bind(this)}
-            multiple={false}
-            accept="image/*">
-            <div>Drop an image or click to select a file to upload.</div>
-          </Dropzone>
-        </div>
+                <div className="FileUpload">
+                    <Dropzone
+                        onDrop={this.onImageDrop.bind(this)}
+                        multiple={false}
+                        accept="image/*">
+                        <div>Drop an image or click to select a file to upload.</div>
+                    </Dropzone>
+                </div>
+                {this.state.uploadedFile ?
+                    <div>
+                        Your picture: <img src={this.state.uploadedFile.preview} style={{maxWidth:"100"}}/>
+                    </div>
+                    :
+                    <div>
+                    </div>
+                }
             <Form horizontal>
                 <FormGroup controlId="formHorizontalName">
                     <Col componentClass={ControlLabel} sm={2}>

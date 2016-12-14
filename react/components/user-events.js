@@ -1,9 +1,5 @@
 import React, {Component} from 'react';
-import CircularProgress from 'material-ui/CircularProgress';
 import {Modal, Tab, Col, Row, Nav, NavItem, Panel, PanelGroup, Button, Collapse, Well} from 'react-bootstrap';
-import {cardStyles as styles} from '../styles/recipe-listing-cards.style';
-import {Link} from 'react-router';
-import axios from 'axios';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import ReportPost from '../components/report-post';
@@ -28,7 +24,7 @@ class UserEvents extends Component {
                             return (
                                 <div>
                                     <Panel header={"event name: "+ userevent.ename} bsStyle="primary">
-                                          {"event description: " + userevent.edescription}
+                                        {"event description: " + userevent.edescription}
                                     </Panel>
 
                                     <Button onClick={() => this.setState({ collapse_open1: !this.state.collapse_open1 })}>

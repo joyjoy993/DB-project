@@ -10,37 +10,35 @@ import {Link} from 'react-router';
 
 class PostDetail extends Component {
 
-
-
     render() {
         return (
             <div style={styles.root}>
                 <GridList
-                  cellHeight={180}
-                  style={styles.gridList}
+                    cellHeight={180}
+                    style={styles.gridList}
                 >
-                  {this.props.posts.map((post) => (
+                {this.props.posts.map((post) => (
                     <Link to={{
-                                pathname: `/recipes/${post.rid}`,
-                                state: {
-                                    modal: true
-                                }
-                            }}>
-                      <GridTile
-                        key={post.rid}
-                        title={post.rtitle}
-                        actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
-                      >
-                      {post.pic == null ?
-                          <img src="../static/img/default.jpg"/>
-                          :
-                          <img src={"../static/img/" + post.pic}/>
-                      }
-                      </GridTile>
+                        pathname: `/recipes/${post.rid}`,
+                        state: {
+                            modal: true
+                        }
+                    }}>
+                        <GridTile
+                            key={post.rid}
+                            title={post.rtitle}
+                            actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
+                        >
+                            {post.pic == null ?
+                                <img src="../static/img/default.jpg"/>
+                                :
+                                <img src={"../static/img/" + post.pic}/>
+                            }
+                        </GridTile>
                     </Link>
-                  ))}
+                ))}
                 </GridList>
-              </div>
+            </div>
         );
     }
 }
