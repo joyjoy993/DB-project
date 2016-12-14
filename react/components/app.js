@@ -3,7 +3,6 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import {appStyles as styles} from '../styles/app.style.js';
-import injectTapEventPlugin from 'react-tap-event-plugin';
 
 const muiTheme = getMuiTheme(lightBaseTheme);
 
@@ -12,7 +11,6 @@ export default class App extends Component {
 
     constructor(props) {
         super(props);
-        injectTapEventPlugin();
     }
 
     componentWillReceiveProps(nextProps) {
