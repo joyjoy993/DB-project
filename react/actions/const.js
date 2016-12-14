@@ -1,0 +1,11 @@
+export const FETCH_RECIPE = 'fetch_recipe';
+export const FETCH_RECIPES = 'fetch_recipes';
+export const FETCH_CURRENTUSER = 'fetch_currentuser';
+export const FETCH_GROUPS = 'fetch_groups';
+export const FETCH_POSTS = 'fetch_posts';
+export const FETCH_EVENTS = 'fetch_events';
+export const FETCH_TAGS = 'fetch_tags';
+export const FETCH_RESULTS = 'fetch_results';
+export const FETCH_REVIEWS = 'fetch_reviews';
+export const FETCH_USEREVENTS = 'fetch_userevents';
+export const FETCH_EVENTREPORT = 'fetch_eventreport';

@@ -1,0 +1,752 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/Cellar/node/4.1.1/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'react-select',
+1 verbose cli   '--save' ]
+2 info using npm@2.14.4
+3 info using node@v4.1.1
+4 verbose install initial load of /Users/joykwok/Desktop/DBproject/package.json
+5 warn package.json db@1.0.0 No repository field.
+6 warn package.json db@1.0.0 No README data
+7 verbose installManyTop reading scoped package data from /Users/joykwok/Desktop/DBproject/node_modules/axios/package.json
+8 verbose installManyTop reading scoped package data from /Users/joykwok/Desktop/DBproject/node_modules/material-ui/package.json
+9 verbose installManyTop reading scoped package data from /Users/joykwok/Desktop/DBproject/node_modules/react/package.json
+10 verbose installManyTop reading scoped package data from /Users/joykwok/Desktop/DBproject/node_modules/react-bootstrap/package.json
+11 verbose installManyTop reading scoped package data from /Users/joykwok/Desktop/DBproject/node_modules/react-dom/package.json
+12 verbose installManyTop reading scoped package data from /Users/joykwok/Desktop/DBproject/node_modules/react-dropzone/package.json
+13 verbose installManyTop reading scoped package data from /Users/joykwok/Desktop/DBproject/node_modules/react-modal/package.json
+14 verbose installManyTop reading scoped package data from /Users/joykwok/Desktop/DBproject/node_modules/react-redux/package.json
+15 verbose installManyTop reading scoped package data from /Users/joykwok/Desktop/DBproject/node_modules/react-router/package.json
+16 verbose installManyTop reading scoped package data from /Users/joykwok/Desktop/DBproject/node_modules/react-tap-event-plugin/package.json
+17 verbose installManyTop reading scoped package data from /Users/joykwok/Desktop/DBproject/node_modules/redux/package.json
+18 verbose installManyTop reading scoped package data from /Users/joykwok/Desktop/DBproject/node_modules/redux-promise/package.json
+19 verbose installManyTop reading scoped package data from /Users/joykwok/Desktop/DBproject/node_modules/style-loader/package.json
+20 verbose installManyTop reading scoped package data from /Users/joykwok/Desktop/DBproject/node_modules/webpack/package.json
+21 info package.json react-tap-event-plugin@2.0.1 No license field.
+22 verbose readDependencies loading dependencies from /Users/joykwok/Desktop/DBproject/package.json
+23 silly cache add args [ 'react-select', null ]
+24 verbose cache add spec react-select
+25 silly cache add parsed spec Result {
+25 silly cache add   raw: 'react-select',
+25 silly cache add   scope: null,
+25 silly cache add   name: 'react-select',
+25 silly cache add   rawSpec: '',
+25 silly cache add   spec: '*',
+25 silly cache add   type: 'range' }
+26 silly addNamed react-select@*
+27 verbose addNamed "*" is a valid semver range for react-select
+28 silly addNameRange { name: 'react-select', range: '*', hasData: false }
+29 silly mapToRegistry name react-select
+30 silly mapToRegistry using default registry
+31 silly mapToRegistry registry https://registry.npmjs.org/
+32 silly mapToRegistry uri https://registry.npmjs.org/react-select
+33 verbose addNameRange registry:https://registry.npmjs.org/react-select not in flight; fetching
+34 verbose request uri https://registry.npmjs.org/react-select
+35 verbose request no auth needed
+36 info attempt registry request try #1 at 12:28:15 AM
+37 verbose request id 9f71385b928eed4e
+38 http request GET https://registry.npmjs.org/react-select
+39 http 200 https://registry.npmjs.org/react-select
+40 silly get cb [ 200,
+40 silly get   { server: 'nginx/1.10.1',
+40 silly get     'content-type': 'application/json',
+40 silly get     'last-modified': 'Wed, 23 Nov 2016 11:33:32 GMT',
+40 silly get     etag: 'W/"58357e8c-2d747"',
+40 silly get     'content-encoding': 'gzip',
+40 silly get     'cache-control': 'max-age=300',
+40 silly get     'content-length': '19482',
+40 silly get     'accept-ranges': 'bytes',
+40 silly get     date: 'Sat, 10 Dec 2016 05:28:16 GMT',
+40 silly get     via: '1.1 varnish',
+40 silly get     age: '0',
+40 silly get     connection: 'keep-alive',
+40 silly get     'x-served-by': 'cache-jfk8130-JFK',
+40 silly get     'x-cache': 'HIT',
+40 silly get     'x-cache-hits': '1',
+40 silly get     'x-timer': 'S1481347696.206337,VS0,VE66',
+40 silly get     vary: 'Accept-Encoding' } ]
+41 verbose get saving react-select to /Users/joykwok/.npm/registry.npmjs.org/react-select/.cache.json
+42 silly addNameRange number 2 { name: 'react-select', range: '*', hasData: true }
+43 silly addNameRange versions [ 'react-select',
+43 silly addNameRange   [ '0.0.1',
+43 silly addNameRange     '0.0.2',
+43 silly addNameRange     '0.0.3',
+43 silly addNameRange     '0.0.4',
+43 silly addNameRange     '0.0.5',
+43 silly addNameRange     '0.0.6',
+43 silly addNameRange     '0.0.7',
+43 silly addNameRange     '0.1.0',
+43 silly addNameRange     '0.1.1',
+43 silly addNameRange     '0.2.0',
+43 silly addNameRange     '0.2.1',
+43 silly addNameRange     '0.2.2',
+43 silly addNameRange     '0.2.3',
+43 silly addNameRange     '0.2.4',
+43 silly addNameRange     '0.2.5',
+43 silly addNameRange     '0.2.6',
+43 silly addNameRange     '0.2.7',
+43 silly addNameRange     '0.2.8',
+43 silly addNameRange     '0.2.9',
+43 silly addNameRange     '0.2.10',
+43 silly addNameRange     '0.2.11',
+43 silly addNameRange     '0.2.12',
+43 silly addNameRange     '0.2.13',
+43 silly addNameRange     '0.2.14',
+43 silly addNameRange     '0.3.0',
+43 silly addNameRange     '0.3.1',
+43 silly addNameRange     '0.3.2',
+43 silly addNameRange     '0.3.3',
+43 silly addNameRange     '0.3.4',
+43 silly addNameRange     '0.3.5',
+43 silly addNameRange     '0.4.0',
+43 silly addNameRange     '0.4.1',
+43 silly addNameRange     '0.4.2',
+43 silly addNameRange     '0.4.3',
+43 silly addNameRange     '0.4.4',
+43 silly addNameRange     '0.4.5',
+43 silly addNameRange     '0.4.6',
+43 silly addNameRange     '0.4.7',
+43 silly addNameRange     '0.4.8',
+43 silly addNameRange     '0.4.9',
+43 silly addNameRange     '0.5.0',
+43 silly addNameRange     '0.5.1',
+43 silly addNameRange     '0.5.2',
+43 silly addNameRange     '0.5.3',
+43 silly addNameRange     '0.5.4',
+43 silly addNameRange     '0.5.5',
+43 silly addNameRange     '0.5.6',
+43 silly addNameRange     '0.6.0',
+43 silly addNameRange     '0.6.1',
+43 silly addNameRange     '0.6.2',
+43 silly addNameRange     '0.6.3',
+43 silly addNameRange     '0.6.4',
+43 silly addNameRange     '0.6.5',
+43 silly addNameRange     '0.6.6',
+43 silly addNameRange     '0.6.7',
+43 silly addNameRange     '0.6.8',
+43 silly addNameRange     '0.6.9',
+43 silly addNameRange     '0.6.10',
+43 silly addNameRange     '0.6.11',
+43 silly addNameRange     '0.6.12',
+43 silly addNameRange     '0.7.0',
+43 silly addNameRange     '0.8.0',
+43 silly addNameRange     '0.8.1',
+43 silly addNameRange     '0.8.2',
+43 silly addNameRange     '0.8.3',
+43 silly addNameRange     '0.8.4',
+43 silly addNameRange     '0.9.0',
+43 silly addNameRange     '0.9.1',
+43 silly addNameRange     '1.0.0-beta1',
+43 silly addNameRange     '1.0.0-beta2',
+43 silly addNameRange     '1.0.0-beta3',
+43 silly addNameRange     '1.0.0-beta4',
+43 silly addNameRange     '1.0.0-beta5',
+43 silly addNameRange     '1.0.0-beta6',
+43 silly addNameRange     '1.0.0-beta7',
+43 silly addNameRange     '1.0.0-beta8',
+43 silly addNameRange     '1.0.0-beta9',
+43 silly addNameRange     '1.0.0-beta10',
+43 silly addNameRange     '1.0.0-beta11',
+43 silly addNameRange     '1.0.0-beta12',
+43 silly addNameRange     '1.0.0-beta13',
+43 silly addNameRange     '1.0.0-beta14',
+43 silly addNameRange     '1.0.0-rc.1',
+43 silly addNameRange     '1.0.0-rc.2' ] ]
+44 silly addNamed react-select@0.9.1
+45 verbose addNamed "0.9.1" is a plain semver version for react-select
+46 silly mapToRegistry name react-select
+47 silly mapToRegistry using default registry
+48 silly mapToRegistry registry https://registry.npmjs.org/
+49 silly mapToRegistry uri https://registry.npmjs.org/react-select
+50 verbose addRemoteTarball https://registry.npmjs.org/react-select/-/react-select-0.9.1.tgz not in flight; adding
+51 verbose addRemoteTarball [ 'https://registry.npmjs.org/react-select/-/react-select-0.9.1.tgz',
+51 verbose addRemoteTarball   'e322a2d0a06396a48206b0553df5ec47d16083ba' ]
+52 info retry fetch attempt 1 at 12:28:16 AM
+53 info attempt registry request try #1 at 12:28:16 AM
+54 http fetch GET https://registry.npmjs.org/react-select/-/react-select-0.9.1.tgz
+55 http fetch 200 https://registry.npmjs.org/react-select/-/react-select-0.9.1.tgz
+56 silly fetchAndShaCheck shasum e322a2d0a06396a48206b0553df5ec47d16083ba
+57 verbose addTmpTarball /var/folders/wb/wj_x4ct11f742f676px2nfsm0000gn/T/npm-12792-c1a851be/registry.npmjs.org/react-select/-/react-select-0.9.1.tgz not in flight; adding
+58 verbose addTmpTarball already have metadata; skipping unpack for react-select@0.9.1
+59 silly cache afterAdd react-select@0.9.1
+60 verbose afterAdd /Users/joykwok/.npm/react-select/0.9.1/package/package.json not in flight; writing
+61 verbose afterAdd /Users/joykwok/.npm/react-select/0.9.1/package/package.json written
+62 silly install resolved [ { name: 'react-select',
+62 silly install resolved     version: '0.9.1',
+62 silly install resolved     description: 'A Select control built with and for ReactJS',
+62 silly install resolved     main: 'lib/Select.js',
+62 silly install resolved     style: 'dist/default.css',
+62 silly install resolved     author: { name: 'Jed Watson' },
+62 silly install resolved     license: 'MIT',
+62 silly install resolved     repository:
+62 silly install resolved      { type: 'git',
+62 silly install resolved        url: 'git+https://github.com/JedWatson/react-select.git' },
+62 silly install resolved     dependencies: { classnames: '^2.2.0', 'react-input-autosize': '^0.6.2' },
+62 silly install resolved     devDependencies:
+62 silly install resolved      { babel: '^5.8.23',
+62 silly install resolved        'babel-eslint': '^4.1.3',
+62 silly install resolved        chai: '^3.4.0',
+62 silly install resolved        coveralls: '^2.11.4',
+62 silly install resolved        eslint: '^1.8.0',
+62 silly install resolved        'eslint-plugin-react': '^3.6.3',
+62 silly install resolved        gulp: '^3.9.0',
+62 silly install resolved        istanbul: '^0.4.0',
+62 silly install resolved        jsdom: '^7.0.2',
+62 silly install resolved        mocha: '^2.3.3',
+62 silly install resolved        react: '^0.14.1',
+62 silly install resolved        'react-addons-test-utils': '^0.14.1',
+62 silly install resolved        'react-dom': '^0.14.1',
+62 silly install resolved        'react-gravatar': '^2.2.2',
+62 silly install resolved        'react-component-gulp-tasks': '^0.7.7',
+62 silly install resolved        sinon: '^1.17.2',
+62 silly install resolved        unexpected: '^10.0.2',
+62 silly install resolved        'unexpected-dom': '^3.0.2',
+62 silly install resolved        'unexpected-sinon': '^8.0.0' },
+62 silly install resolved     peerDependencies: { react: '^0.14.1', 'react-dom': '^0.14.1' },
+62 silly install resolved     'browserify-shim':
+62 silly install resolved      { classnames: 'global:classNames',
+62 silly install resolved        react: 'global:React',
+62 silly install resolved        'react-input-autosize': 'global:AutosizeInput' },
+62 silly install resolved     scripts:
+62 silly install resolved      { build: 'gulp clean && NODE_ENV=production gulp build',
+62 silly install resolved        bump: 'gulp bump',
+62 silly install resolved        'bump:major': 'gulp bump:major',
+62 silly install resolved        'bump:minor': 'gulp bump:minor',
+62 silly install resolved        cover: 'istanbul cover _mocha -- -u exports --compilers js:babel/register -R spec',
+62 silly install resolved        coveralls: 'NODE_ENV=test istanbul cover _mocha --report lcovonly -- -u exports --compilers js:babel/register -R spec && cat coverage/lcov.info | coveralls',
+62 silly install resolved        examples: 'gulp dev:server',
+62 silly install resolved        lint: 'eslint .',
+62 silly install resolved        'publish:examples': 'NODE_ENV=production gulp publish:examples',
+62 silly install resolved        release: 'NODE_ENV=production gulp release',
+62 silly install resolved        start: 'gulp dev',
+62 silly install resolved        test: 'mocha --compilers js:babel/register',
+62 silly install resolved        watch: 'gulp watch:lib' },
+62 silly install resolved     keywords:
+62 silly install resolved      [ 'combobox',
+62 silly install resolved        'form',
+62 silly install resolved        'input',
+62 silly install resolved        'multiselect',
+62 silly install resolved        'react',
+62 silly install resolved        'react-component',
+62 silly install resolved        'select',
+62 silly install resolved        'ui' ],
+62 silly install resolved     gitHead: 'd8fe544f32dc28e1f72592671f7c70bddae3258a',
+62 silly install resolved     bugs: { url: 'https://github.com/JedWatson/react-select/issues' },
+62 silly install resolved     homepage: 'https://github.com/JedWatson/react-select#readme',
+62 silly install resolved     _id: 'react-select@0.9.1',
+62 silly install resolved     _shasum: 'e322a2d0a06396a48206b0553df5ec47d16083ba',
+62 silly install resolved     _from: 'react-select@*',
+62 silly install resolved     _npmVersion: '3.3.6',
+62 silly install resolved     _nodeVersion: '5.0.0',
+62 silly install resolved     _npmUser: { name: 'jedwatson', email: 'jed.watson@me.com' },
+62 silly install resolved     maintainers: [ [Object] ],
+62 silly install resolved     dist:
+62 silly install resolved      { shasum: 'e322a2d0a06396a48206b0553df5ec47d16083ba',
+62 silly install resolved        tarball: 'https://registry.npmjs.org/react-select/-/react-select-0.9.1.tgz' },
+62 silly install resolved     directories: {},
+62 silly install resolved     _resolved: 'https://registry.npmjs.org/react-select/-/react-select-0.9.1.tgz' } ]
+63 info install react-select@0.9.1 into /Users/joykwok/Desktop/DBproject
+64 info installOne react-select@0.9.1
+65 verbose installOne of react-select to /Users/joykwok/Desktop/DBproject not in flight; installing
+66 verbose lock using /Users/joykwok/.npm/_locks/react-select-2663e34fbee43441.lock for /Users/joykwok/Desktop/DBproject/node_modules/react-select
+67 silly install write writing react-select 0.9.1 to /Users/joykwok/Desktop/DBproject/node_modules/react-select
+68 verbose unbuild node_modules/react-select
+69 silly gentlyRm /Users/joykwok/Desktop/DBproject/node_modules/react-select is being purged from base /Users/joykwok/Desktop/DBproject
+70 verbose gentlyRm don't care about contents; nuking /Users/joykwok/Desktop/DBproject/node_modules/react-select
+71 verbose tar unpack /Users/joykwok/.npm/react-select/0.9.1/package.tgz
+72 verbose tar unpacking to /Users/joykwok/Desktop/DBproject/node_modules/react-select
+73 silly gentlyRm /Users/joykwok/Desktop/DBproject/node_modules/react-select is being purged
+74 verbose gentlyRm don't care about contents; nuking /Users/joykwok/Desktop/DBproject/node_modules/react-select
+75 silly gunzTarPerm modes [ '755', '644' ]
+76 silly gunzTarPerm extractEntry package.json
+77 silly gunzTarPerm extractEntry .npmignore
+78 silly gunzTarPerm modified mode [ '.npmignore', 436, 420 ]
+79 silly gunzTarPerm extractEntry README.md
+80 silly gunzTarPerm extractEntry LICENSE
+81 silly gunzTarPerm extractEntry wallaby.js
+82 silly gunzTarPerm extractEntry gulpfile.js
+83 silly gunzTarPerm extractEntry .publish/app.js
+84 silly gunzTarPerm extractEntry .publish/bundle.js
+85 silly gunzTarPerm extractEntry .publish/common.js
+86 silly gunzTarPerm extractEntry .publish/standalone.js
+87 silly gunzTarPerm extractEntry .publish/example.css
+88 silly gunzTarPerm extractEntry .publish/index.html
+89 silly gunzTarPerm extractEntry .publish/standalone.html
+90 silly gunzTarPerm extractEntry .travis.yml
+91 silly gunzTarPerm extractEntry CONTRIBUTING.md
+92 silly gunzTarPerm extractEntry HISTORY.md
+93 silly gunzTarPerm extractEntry .eslintignore
+94 silly gunzTarPerm extractEntry .coveralls.yml
+95 silly gunzTarPerm extractEntry dist/react-select.js
+96 silly gunzTarPerm extractEntry dist/react-select.min.js
+97 silly gunzTarPerm extractEntry dist/react-select.css
+98 silly gunzTarPerm extractEntry dist/react-select.min.css
+99 silly gunzTarPerm extractEntry examples/src/.npmignore
+100 silly gunzTarPerm extractEntry examples/src/app.js
+101 silly gunzTarPerm extractEntry examples/src/components/Contributors.js
+102 silly gunzTarPerm extractEntry examples/src/components/CustomOption.js
+103 silly gunzTarPerm extractEntry examples/src/components/CustomRenderField.js
+104 silly gunzTarPerm extractEntry examples/src/components/CustomSingleValue.js
+105 silly gunzTarPerm extractEntry examples/src/components/DisabledUpsellOptions.js
+106 silly gunzTarPerm extractEntry examples/src/components/CustomKeysField.js
+107 silly gunzTarPerm extractEntry examples/src/components/RemoteSelectField.js
+108 silly gunzTarPerm extractEntry examples/src/components/SelectedValuesField.js
+109 silly gunzTarPerm extractEntry examples/src/components/StatesField.js
+110 silly gunzTarPerm extractEntry examples/src/components/UsersField.js
+111 silly gunzTarPerm extractEntry examples/src/components/ValuesAsNumbersField.js
+112 silly gunzTarPerm extractEntry examples/src/components/MultiSelectField.js
+113 silly gunzTarPerm extractEntry examples/src/data/contributors.js
+114 silly gunzTarPerm extractEntry examples/src/data/states.js
+115 silly gunzTarPerm extractEntry examples/src/data/users.js
+116 silly gunzTarPerm extractEntry examples/src/example.less
+117 silly gunzTarPerm extractEntry examples/src/favicon.ico
+118 silly gunzTarPerm extractEntry examples/src/index.html
+119 silly gunzTarPerm extractEntry examples/src/standalone.html
+120 silly gunzTarPerm extractEntry .eslintrc
+121 silly gunzTarPerm extractEntry less/control.less
+122 silly gunzTarPerm extractEntry less/default.less
+123 silly gunzTarPerm extractEntry less/menu.less
+124 silly gunzTarPerm extractEntry less/mixins.less
+125 silly gunzTarPerm extractEntry less/multi.less
+126 silly gunzTarPerm extractEntry less/select.less
+127 silly gunzTarPerm extractEntry less/spinner.less
+128 silly gunzTarPerm extractEntry lib/Option.js
+129 silly gunzTarPerm extractEntry lib/Select.js
+130 silly gunzTarPerm extractEntry lib/SingleValue.js
+131 silly gunzTarPerm extractEntry lib/Value.js
+132 silly gunzTarPerm extractEntry testHelpers/jsdomHelper.js
+133 silly gunzTarPerm extractEntry testHelpers/nodeListType.js
+134 silly gunzTarPerm extractEntry scss/components.scss
+135 silly gunzTarPerm extractEntry scss/control.scss
+136 silly gunzTarPerm extractEntry scss/default.scss
+137 silly gunzTarPerm extractEntry scss/menu.scss
+138 silly gunzTarPerm extractEntry scss/mixins.scss
+139 silly gunzTarPerm extractEntry scss/multi.scss
+140 silly gunzTarPerm extractEntry scss/select.scss
+141 silly gunzTarPerm extractEntry scss/spinner.scss
+142 silly gunzTarPerm extractEntry src/Option.js
+143 silly gunzTarPerm extractEntry src/Select.js
+144 silly gunzTarPerm extractEntry src/SingleValue.js
+145 silly gunzTarPerm extractEntry src/Value.js
+146 silly gunzTarPerm extractEntry test/Select-test.js
+147 silly gunzTarPerm extractEntry test/Value-test.js
+148 verbose write writing to /Users/joykwok/Desktop/DBproject/node_modules/react-select/package.json
+149 info preinstall react-select@0.9.1
+150 verbose readDependencies loading dependencies from /Users/joykwok/Desktop/DBproject/node_modules/react-select/package.json
+151 silly prepareForInstallMany adding classnames@^2.2.0 from react-select dependencies
+152 silly prepareForInstallMany adding react-input-autosize@^0.6.2 from react-select dependencies
+153 silly prepareForInstallMany adding react@^0.14.1 from react-select peerDependencies
+154 silly prepareForInstallMany adding react-dom@^0.14.1 from react-select peerDependencies
+155 warn peerDependencies The peer dependency react@^0.14.1 included from react-select will no
+156 warn peerDependencies longer be automatically installed to fulfill the peerDependency
+157 warn peerDependencies in npm 3+. Your application will need to depend on it explicitly.
+158 warn peerDependencies The peer dependency react-dom@^0.14.1 included from react-select will no
+159 warn peerDependencies longer be automatically installed to fulfill the peerDependency
+160 warn peerDependencies in npm 3+. Your application will need to depend on it explicitly.
+161 verbose readDependencies loading dependencies from /Users/joykwok/Desktop/DBproject/node_modules/react-select/package.json
+162 silly cache add args [ 'classnames@^2.2.0', null ]
+163 verbose cache add spec classnames@^2.2.0
+164 silly cache add args [ 'react-input-autosize@^0.6.2', null ]
+165 verbose cache add spec react-input-autosize@^0.6.2
+166 silly cache add parsed spec Result {
+166 silly cache add   raw: 'classnames@^2.2.0',
+166 silly cache add   scope: null,
+166 silly cache add   name: 'classnames',
+166 silly cache add   rawSpec: '^2.2.0',
+166 silly cache add   spec: '>=2.2.0 <3.0.0',
+166 silly cache add   type: 'range' }
+167 silly addNamed classnames@>=2.2.0 <3.0.0
+168 verbose addNamed ">=2.2.0 <3.0.0" is a valid semver range for classnames
+169 silly addNameRange { name: 'classnames', range: '>=2.2.0 <3.0.0', hasData: false }
+170 silly mapToRegistry name classnames
+171 silly mapToRegistry using default registry
+172 silly mapToRegistry registry https://registry.npmjs.org/
+173 silly mapToRegistry uri https://registry.npmjs.org/classnames
+174 verbose addNameRange registry:https://registry.npmjs.org/classnames not in flight; fetching
+175 silly cache add parsed spec Result {
+175 silly cache add   raw: 'react-input-autosize@^0.6.2',
+175 silly cache add   scope: null,
+175 silly cache add   name: 'react-input-autosize',
+175 silly cache add   rawSpec: '^0.6.2',
+175 silly cache add   spec: '>=0.6.2 <0.7.0',
+175 silly cache add   type: 'range' }
+176 silly addNamed react-input-autosize@>=0.6.2 <0.7.0
+177 verbose addNamed ">=0.6.2 <0.7.0" is a valid semver range for react-input-autosize
+178 silly addNameRange { name: 'react-input-autosize',
+178 silly addNameRange   range: '>=0.6.2 <0.7.0',
+178 silly addNameRange   hasData: false }
+179 silly mapToRegistry name react-input-autosize
+180 silly mapToRegistry using default registry
+181 silly mapToRegistry registry https://registry.npmjs.org/
+182 silly mapToRegistry uri https://registry.npmjs.org/react-input-autosize
+183 verbose addNameRange registry:https://registry.npmjs.org/react-input-autosize not in flight; fetching
+184 verbose request uri https://registry.npmjs.org/react-input-autosize
+185 verbose request no auth needed
+186 info attempt registry request try #1 at 12:28:16 AM
+187 http request GET https://registry.npmjs.org/react-input-autosize
+188 verbose request uri https://registry.npmjs.org/classnames
+189 verbose request no auth needed
+190 info attempt registry request try #1 at 12:28:16 AM
+191 verbose etag W/"583e6528-802f"
+192 verbose lastModified Wed, 30 Nov 2016 05:35:36 GMT
+193 http request GET https://registry.npmjs.org/classnames
+194 http 304 https://registry.npmjs.org/classnames
+195 silly get cb [ 304,
+195 silly get   { date: 'Sat, 10 Dec 2016 05:28:16 GMT',
+195 silly get     via: '1.1 varnish',
+195 silly get     'cache-control': 'max-age=300',
+195 silly get     etag: 'W/"583e6528-802f"',
+195 silly get     age: '120',
+195 silly get     connection: 'keep-alive',
+195 silly get     'x-served-by': 'cache-jfk8139-JFK',
+195 silly get     'x-cache': 'HIT',
+195 silly get     'x-cache-hits': '1',
+195 silly get     'x-timer': 'S1481347696.834982,VS0,VE0',
+195 silly get     vary: 'Accept-Encoding' } ]
+196 verbose etag https://registry.npmjs.org/classnames from cache
+197 verbose get saving classnames to /Users/joykwok/.npm/registry.npmjs.org/classnames/.cache.json
+198 silly addNameRange number 2 { name: 'classnames', range: '>=2.2.0 <3.0.0', hasData: true }
+199 silly addNameRange versions [ 'classnames',
+199 silly addNameRange   [ '1.0.0',
+199 silly addNameRange     '1.1.0',
+199 silly addNameRange     '1.1.1',
+199 silly addNameRange     '1.1.2',
+199 silly addNameRange     '1.1.3',
+199 silly addNameRange     '1.1.4',
+199 silly addNameRange     '1.2.0',
+199 silly addNameRange     '1.2.1',
+199 silly addNameRange     '1.2.2',
+199 silly addNameRange     '2.0.0',
+199 silly addNameRange     '2.1.0',
+199 silly addNameRange     '2.1.1',
+199 silly addNameRange     '2.1.2',
+199 silly addNameRange     '2.1.3',
+199 silly addNameRange     '2.1.4',
+199 silly addNameRange     '2.1.5',
+199 silly addNameRange     '2.2.0',
+199 silly addNameRange     '2.2.1',
+199 silly addNameRange     '2.2.2',
+199 silly addNameRange     '2.2.3',
+199 silly addNameRange     '2.2.4',
+199 silly addNameRange     '2.2.5' ] ]
+200 silly addNamed classnames@2.2.5
+201 verbose addNamed "2.2.5" is a plain semver version for classnames
+202 silly cache afterAdd classnames@2.2.5
+203 verbose afterAdd /Users/joykwok/.npm/classnames/2.2.5/package/package.json not in flight; writing
+204 verbose afterAdd /Users/joykwok/.npm/classnames/2.2.5/package/package.json written
+205 http 200 https://registry.npmjs.org/react-input-autosize
+206 silly get cb [ 200,
+206 silly get   { server: 'nginx/1.10.1',
+206 silly get     'content-type': 'application/json',
+206 silly get     'last-modified': 'Sun, 10 Jul 2016 13:39:26 GMT',
+206 silly get     etag: 'W/"5782500e-ef59"',
+206 silly get     'content-encoding': 'gzip',
+206 silly get     'cache-control': 'max-age=300',
+206 silly get     'content-length': '6703',
+206 silly get     'accept-ranges': 'bytes',
+206 silly get     date: 'Sat, 10 Dec 2016 05:28:16 GMT',
+206 silly get     via: '1.1 varnish',
+206 silly get     age: '0',
+206 silly get     connection: 'keep-alive',
+206 silly get     'x-served-by': 'cache-jfk8144-JFK',
+206 silly get     'x-cache': 'MISS',
+206 silly get     'x-cache-hits': '0',
+206 silly get     'x-timer': 'S1481347696.835004,VS0,VE62',
+206 silly get     vary: 'Accept-Encoding' } ]
+207 verbose get saving react-input-autosize to /Users/joykwok/.npm/registry.npmjs.org/react-input-autosize/.cache.json
+208 silly addNameRange number 2 { name: 'react-input-autosize',
+208 silly addNameRange   range: '>=0.6.2 <0.7.0',
+208 silly addNameRange   hasData: true }
+209 silly addNameRange versions [ 'react-input-autosize',
+209 silly addNameRange   [ '0.0.1',
+209 silly addNameRange     '0.1.0',
+209 silly addNameRange     '0.2.0',
+209 silly addNameRange     '0.2.1',
+209 silly addNameRange     '0.2.2',
+209 silly addNameRange     '0.2.3',
+209 silly addNameRange     '0.3.0',
+209 silly addNameRange     '0.3.1',
+209 silly addNameRange     '0.4.0',
+209 silly addNameRange     '0.4.1',
+209 silly addNameRange     '0.4.2',
+209 silly addNameRange     '0.4.3',
+209 silly addNameRange     '0.4.4',
+209 silly addNameRange     '0.4.5',
+209 silly addNameRange     '0.5.0',
+209 silly addNameRange     '0.5.1',
+209 silly addNameRange     '0.5.2',
+209 silly addNameRange     '0.5.3',
+209 silly addNameRange     '0.6.0',
+209 silly addNameRange     '0.6.1',
+209 silly addNameRange     '0.6.2',
+209 silly addNameRange     '0.6.3',
+209 silly addNameRange     '0.6.4',
+209 silly addNameRange     '0.6.5',
+209 silly addNameRange     '0.6.6',
+209 silly addNameRange     '0.6.7',
+209 silly addNameRange     '0.6.8',
+209 silly addNameRange     '0.6.9',
+209 silly addNameRange     '0.6.10',
+209 silly addNameRange     '0.6.12',
+209 silly addNameRange     '0.6.13',
+209 silly addNameRange     '1.0.0',
+209 silly addNameRange     '1.1.0' ] ]
+210 silly addNamed react-input-autosize@0.6.13
+211 verbose addNamed "0.6.13" is a plain semver version for react-input-autosize
+212 silly mapToRegistry name react-input-autosize
+213 silly mapToRegistry using default registry
+214 silly mapToRegistry registry https://registry.npmjs.org/
+215 silly mapToRegistry uri https://registry.npmjs.org/react-input-autosize
+216 verbose addRemoteTarball https://registry.npmjs.org/react-input-autosize/-/react-input-autosize-0.6.13.tgz not in flight; adding
+217 verbose addRemoteTarball [ 'https://registry.npmjs.org/react-input-autosize/-/react-input-autosize-0.6.13.tgz',
+217 verbose addRemoteTarball   '386ff7a9d2c3dc016c265bf2e59d397050f65af7' ]
+218 info retry fetch attempt 1 at 12:28:16 AM
+219 info attempt registry request try #1 at 12:28:16 AM
+220 http fetch GET https://registry.npmjs.org/react-input-autosize/-/react-input-autosize-0.6.13.tgz
+221 http fetch 200 https://registry.npmjs.org/react-input-autosize/-/react-input-autosize-0.6.13.tgz
+222 silly fetchAndShaCheck shasum 386ff7a9d2c3dc016c265bf2e59d397050f65af7
+223 verbose addTmpTarball /var/folders/wb/wj_x4ct11f742f676px2nfsm0000gn/T/npm-12792-c1a851be/registry.npmjs.org/react-input-autosize/-/react-input-autosize-0.6.13.tgz not in flight; adding
+224 verbose addTmpTarball already have metadata; skipping unpack for react-input-autosize@0.6.13
+225 silly cache afterAdd react-input-autosize@0.6.13
+226 verbose afterAdd /Users/joykwok/.npm/react-input-autosize/0.6.13/package/package.json not in flight; writing
+227 verbose afterAdd /Users/joykwok/.npm/react-input-autosize/0.6.13/package/package.json written
+228 silly install resolved [ { name: 'classnames',
+228 silly install resolved     version: '2.2.5',
+228 silly install resolved     description: 'A simple utility for conditionally joining classNames together',
+228 silly install resolved     main: 'index.js',
+228 silly install resolved     author: { name: 'Jed Watson' },
+228 silly install resolved     license: 'MIT',
+228 silly install resolved     repository:
+228 silly install resolved      { type: 'git',
+228 silly install resolved        url: 'git+https://github.com/JedWatson/classnames.git' },
+228 silly install resolved     scripts:
+228 silly install resolved      { benchmarks: 'node ./benchmarks/run',
+228 silly install resolved        unit: 'mocha tests/*.js',
+228 silly install resolved        test: 'npm run unit' },
+228 silly install resolved     keywords:
+228 silly install resolved      [ 'react',
+228 silly install resolved        'css',
+228 silly install resolved        'classes',
+228 silly install resolved        'classname',
+228 silly install resolved        'classnames',
+228 silly install resolved        'util',
+228 silly install resolved        'utility' ],
+228 silly install resolved     devDependencies: { benchmark: '^1.0.0', mocha: '^2.1.0' },
+228 silly install resolved     gitHead: '1fc62c0490bfc7d67a1178bbb60897cfa0580c7b',
+228 silly install resolved     bugs: { url: 'https://github.com/JedWatson/classnames/issues' },
+228 silly install resolved     homepage: 'https://github.com/JedWatson/classnames#readme',
+228 silly install resolved     _id: 'classnames@2.2.5',
+228 silly install resolved     _shasum: 'fb3801d453467649ef3603c7d61a02bd129bde6d',
+228 silly install resolved     _from: 'classnames@>=2.2.0 <3.0.0',
+228 silly install resolved     _npmVersion: '3.3.6',
+228 silly install resolved     _nodeVersion: '5.0.0',
+228 silly install resolved     _npmUser: { name: 'jedwatson', email: 'jed.watson@me.com' },
+228 silly install resolved     maintainers: [ [Object] ],
+228 silly install resolved     dist:
+228 silly install resolved      { shasum: 'fb3801d453467649ef3603c7d61a02bd129bde6d',
+228 silly install resolved        tarball: 'https://registry.npmjs.org/classnames/-/classnames-2.2.5.tgz' },
+228 silly install resolved     _npmOperationalInternal:
+228 silly install resolved      { host: 'packages-12-west.internal.npmjs.com',
+228 silly install resolved        tmp: 'tmp/classnames-2.2.5.tgz_1462195436082_0.17347457958385348' },
+228 silly install resolved     directories: {},
+228 silly install resolved     _resolved: 'https://registry.npmjs.org/classnames/-/classnames-2.2.5.tgz',
+228 silly install resolved     readme: 'ERROR: No README data found!' },
+228 silly install resolved   { name: 'react-input-autosize',
+228 silly install resolved     version: '0.6.13',
+228 silly install resolved     description: 'Auto-resizing Input Component for React',
+228 silly install resolved     main: 'lib/AutosizeInput.js',
+228 silly install resolved     author: { name: 'Jed Watson' },
+228 silly install resolved     license: 'MIT',
+228 silly install resolved     repository:
+228 silly install resolved      { type: 'git',
+228 silly install resolved        url: 'git+https://github.com/JedWatson/react-input-autosize.git' },
+228 silly install resolved     devDependencies:
+228 silly install resolved      { 'babel-eslint': '^4.1.3',
+228 silly install resolved        'babel-jest': '^6.0.1',
+228 silly install resolved        eslint: '^1.10.3',
+228 silly install resolved        'eslint-plugin-react': '^3.11.3',
+228 silly install resolved        gulp: '^3.9.0',
+228 silly install resolved        'jest-cli': '^0.8.1',
+228 silly install resolved        react: '^15.0',
+228 silly install resolved        'react-dom': '^15.0',
+228 silly install resolved        'react-addons-test-utils': '^15.0',
+228 silly install resolved        'react-component-gulp-tasks': '^0.7.6' },
+228 silly install resolved     peerDependencies: { react: '^0.14 || ^15.0.0-rc || ^15.0' },
+228 silly install resolved     'browserify-shim': { react: 'global:React' },
+228 silly install resolved     scripts:
+228 silly install resolved      { build: 'gulp clean && NODE_ENV=production gulp build',
+228 silly install resolved        bump: 'gulp bump',
+228 silly install resolved        'bump:major': 'gulp bump:major',
+228 silly install resolved        'bump:minor': 'gulp bump:minor',
+228 silly install resolved        examples: 'gulp dev:server',
+228 silly install resolved        lint: 'eslint ./; true',
+228 silly install resolved        'publish:site': 'NODE_ENV=production gulp publish:examples',
+228 silly install resolved        release: 'NODE_ENV=production gulp release',
+228 silly install resolved        start: 'gulp dev',
+228 silly install resolved        test: 'jest; true',
+228 silly install resolved        watch: 'gulp watch:lib' },
+228 silly install resolved     jest:
+228 silly install resolved      { scriptPreprocessor: '<rootDir>/node_modules/babel-jest',
+228 silly install resolved        unmockedModulePathPatterns: [Object],
+228 silly install resolved        testPathDirs: [Object] },
+228 silly install resolved     keywords: [ 'react', 'react-component', 'input', 'autosize' ],
+228 silly install resolved     gitHead: '75603f8b155cf70b4fb40cde66ac72613f231087',
+228 silly install resolved     bugs: { url: 'https://github.com/JedWatson/react-input-autosize/issues' },
+228 silly install resolved     homepage: 'https://github.com/JedWatson/react-input-autosize#readme',
+228 silly install resolved     _id: 'react-input-autosize@0.6.13',
+228 silly install resolved     _shasum: '386ff7a9d2c3dc016c265bf2e59d397050f65af7',
+228 silly install resolved     _from: 'react-input-autosize@>=0.6.2 <0.7.0',
+228 silly install resolved     _npmVersion: '2.14.12',
+228 silly install resolved     _nodeVersion: '4.2.6',
+228 silly install resolved     _npmUser: { name: 'jedwatson', email: 'jed.watson@me.com' },
+228 silly install resolved     dist:
+228 silly install resolved      { shasum: '386ff7a9d2c3dc016c265bf2e59d397050f65af7',
+228 silly install resolved        tarball: 'https://registry.npmjs.org/react-input-autosize/-/react-input-autosize-0.6.13.tgz' },
+228 silly install resolved     maintainers: [ [Object] ],
+228 silly install resolved     _npmOperationalInternal:
+228 silly install resolved      { host: 'packages-16-east.internal.npmjs.com',
+228 silly install resolved        tmp: 'tmp/react-input-autosize-0.6.13.tgz_1461324591556_0.8218500926159322' },
+228 silly install resolved     directories: {},
+228 silly install resolved     _resolved: 'https://registry.npmjs.org/react-input-autosize/-/react-input-autosize-0.6.13.tgz' } ]
+229 info install classnames@2.2.5 into /Users/joykwok/Desktop/DBproject/node_modules/react-select
+230 info install react-input-autosize@0.6.13 into /Users/joykwok/Desktop/DBproject/node_modules/react-select
+231 info installOne classnames@2.2.5
+232 verbose installOne of classnames to /Users/joykwok/Desktop/DBproject/node_modules/react-select not in flight; installing
+233 info installOne react-input-autosize@0.6.13
+234 verbose installOne of react-input-autosize to /Users/joykwok/Desktop/DBproject/node_modules/react-select not in flight; installing
+235 verbose lock using /Users/joykwok/.npm/_locks/classnames-ad4ad5b0006c49af.lock for /Users/joykwok/Desktop/DBproject/node_modules/react-select/node_modules/classnames
+236 verbose lock using /Users/joykwok/.npm/_locks/react-input-autosize-83458d2ebd4ac1ed.lock for /Users/joykwok/Desktop/DBproject/node_modules/react-select/node_modules/react-input-autosize
+237 silly install write writing classnames 2.2.5 to /Users/joykwok/Desktop/DBproject/node_modules/react-select/node_modules/classnames
+238 silly install write writing react-input-autosize 0.6.13 to /Users/joykwok/Desktop/DBproject/node_modules/react-select/node_modules/react-input-autosize
+239 verbose unbuild node_modules/react-select/node_modules/classnames
+240 verbose unbuild node_modules/react-select/node_modules/react-input-autosize
+241 silly gentlyRm /Users/joykwok/Desktop/DBproject/node_modules/react-select/node_modules/classnames is being purged from base /Users/joykwok/Desktop/DBproject
+242 verbose gentlyRm don't care about contents; nuking /Users/joykwok/Desktop/DBproject/node_modules/react-select/node_modules/classnames
+243 silly gentlyRm /Users/joykwok/Desktop/DBproject/node_modules/react-select/node_modules/react-input-autosize is being purged from base /Users/joykwok/Desktop/DBproject
+244 verbose gentlyRm don't care about contents; nuking /Users/joykwok/Desktop/DBproject/node_modules/react-select/node_modules/react-input-autosize
+245 verbose tar unpack /Users/joykwok/.npm/classnames/2.2.5/package.tgz
+246 verbose tar unpacking to /Users/joykwok/Desktop/DBproject/node_modules/react-select/node_modules/classnames
+247 silly gentlyRm /Users/joykwok/Desktop/DBproject/node_modules/react-select/node_modules/classnames is being purged
+248 verbose gentlyRm don't care about contents; nuking /Users/joykwok/Desktop/DBproject/node_modules/react-select/node_modules/classnames
+249 verbose tar unpack /Users/joykwok/.npm/react-input-autosize/0.6.13/package.tgz
+250 verbose tar unpacking to /Users/joykwok/Desktop/DBproject/node_modules/react-select/node_modules/react-input-autosize
+251 silly gentlyRm /Users/joykwok/Desktop/DBproject/node_modules/react-select/node_modules/react-input-autosize is being purged
+252 verbose gentlyRm don't care about contents; nuking /Users/joykwok/Desktop/DBproject/node_modules/react-select/node_modules/react-input-autosize
+253 silly gunzTarPerm modes [ '755', '644' ]
+254 silly gunzTarPerm modes [ '755', '644' ]
+255 silly gunzTarPerm extractEntry package.json
+256 silly gunzTarPerm extractEntry package.json
+257 silly gunzTarPerm extractEntry .npmignore
+258 silly gunzTarPerm extractEntry README.md
+259 silly gunzTarPerm extractEntry README.md
+260 silly gunzTarPerm extractEntry LICENSE
+261 silly gunzTarPerm extractEntry bind.js
+262 silly gunzTarPerm extractEntry dedupe.js
+263 silly gunzTarPerm extractEntry LICENSE
+264 silly gunzTarPerm extractEntry .eslintrc
+265 silly gunzTarPerm extractEntry index.js
+266 silly gunzTarPerm extractEntry .eslintignore
+267 silly gunzTarPerm extractEntry dist/react-input-autosize.js
+268 silly gunzTarPerm extractEntry CONTRIBUTING.md
+269 silly gunzTarPerm extractEntry bower.json
+270 silly gunzTarPerm extractEntry dist/react-input-autosize.min.js
+271 silly gunzTarPerm extractEntry example/src/.npmignore
+272 silly gunzTarPerm extractEntry example/src/app.js
+273 silly gunzTarPerm extractEntry HISTORY.md
+274 silly gunzTarPerm extractEntry example/src/example.less
+275 silly gunzTarPerm extractEntry example/src/index.html
+276 silly gunzTarPerm extractEntry example/src/standalone.html
+277 silly gunzTarPerm extractEntry .editorconfig
+278 silly gunzTarPerm extractEntry lib/AutosizeInput.js
+279 silly gunzTarPerm extractEntry src/AutosizeInput.js
+280 verbose write writing to /Users/joykwok/Desktop/DBproject/node_modules/react-select/node_modules/classnames/package.json
+281 info preinstall classnames@2.2.5
+282 verbose readDependencies loading dependencies from /Users/joykwok/Desktop/DBproject/node_modules/react-select/node_modules/classnames/package.json
+283 verbose readDependencies loading dependencies from /Users/joykwok/Desktop/DBproject/node_modules/react-select/node_modules/classnames/package.json
+284 silly install resolved []
+285 verbose about to build /Users/joykwok/Desktop/DBproject/node_modules/react-select/node_modules/classnames
+286 info build /Users/joykwok/Desktop/DBproject/node_modules/react-select/node_modules/classnames
+287 info linkStuff classnames@2.2.5
+288 silly linkStuff classnames@2.2.5 has /Users/joykwok/Desktop/DBproject/node_modules/react-select/node_modules as its parent node_modules
+289 verbose linkBins classnames@2.2.5
+290 verbose linkMans classnames@2.2.5
+291 verbose rebuildBundles classnames@2.2.5
+292 info install classnames@2.2.5
+293 info postinstall classnames@2.2.5
+294 verbose unlock done using /Users/joykwok/.npm/_locks/classnames-ad4ad5b0006c49af.lock for /Users/joykwok/Desktop/DBproject/node_modules/react-select/node_modules/classnames
+295 verbose write writing to /Users/joykwok/Desktop/DBproject/node_modules/react-select/node_modules/react-input-autosize/package.json
+296 info preinstall react-input-autosize@0.6.13
+297 verbose readDependencies loading dependencies from /Users/joykwok/Desktop/DBproject/node_modules/react-select/node_modules/react-input-autosize/package.json
+298 verbose readDependencies loading dependencies from /Users/joykwok/Desktop/DBproject/node_modules/react-select/node_modules/react-input-autosize/package.json
+299 silly install resolved []
+300 verbose about to build /Users/joykwok/Desktop/DBproject/node_modules/react-select/node_modules/react-input-autosize
+301 info build /Users/joykwok/Desktop/DBproject/node_modules/react-select/node_modules/react-input-autosize
+302 info linkStuff react-input-autosize@0.6.13
+303 silly linkStuff react-input-autosize@0.6.13 has /Users/joykwok/Desktop/DBproject/node_modules/react-select/node_modules as its parent node_modules
+304 verbose linkBins react-input-autosize@0.6.13
+305 verbose linkMans react-input-autosize@0.6.13
+306 verbose rebuildBundles react-input-autosize@0.6.13
+307 info install react-input-autosize@0.6.13
+308 info postinstall react-input-autosize@0.6.13
+309 verbose unlock done using /Users/joykwok/.npm/_locks/react-input-autosize-83458d2ebd4ac1ed.lock for /Users/joykwok/Desktop/DBproject/node_modules/react-select/node_modules/react-input-autosize
+310 verbose about to build /Users/joykwok/Desktop/DBproject/node_modules/react-select
+311 info build /Users/joykwok/Desktop/DBproject/node_modules/react-select
+312 info linkStuff react-select@0.9.1
+313 silly linkStuff react-select@0.9.1 has /Users/joykwok/Desktop/DBproject/node_modules as its parent node_modules
+314 verbose linkBins react-select@0.9.1
+315 verbose linkMans react-select@0.9.1
+316 verbose rebuildBundles react-select@0.9.1
+317 verbose rebuildBundles [ 'classnames', 'react-input-autosize' ]
+318 info install react-select@0.9.1
+319 info postinstall react-select@0.9.1
+320 verbose readDependencies loading dependencies from /Users/joykwok/Desktop/DBproject/package.json
+321 verbose targetResolver reading package data from /Users/joykwok/Desktop/DBproject/node_modules/axios/package.json
+322 verbose targetResolver reading package data from /Users/joykwok/Desktop/DBproject/node_modules/material-ui/package.json
+323 verbose targetResolver reading package data from /Users/joykwok/Desktop/DBproject/node_modules/react/package.json
+324 verbose targetResolver reading package data from /Users/joykwok/Desktop/DBproject/node_modules/react-bootstrap/package.json
+325 verbose targetResolver reading package data from /Users/joykwok/Desktop/DBproject/node_modules/react-dom/package.json
+326 verbose targetResolver reading package data from /Users/joykwok/Desktop/DBproject/node_modules/react-dropzone/package.json
+327 verbose targetResolver reading package data from /Users/joykwok/Desktop/DBproject/node_modules/react-modal/package.json
+328 verbose targetResolver reading package data from /Users/joykwok/Desktop/DBproject/node_modules/react-redux/package.json
+329 verbose targetResolver reading package data from /Users/joykwok/Desktop/DBproject/node_modules/react-router/package.json
+330 verbose targetResolver reading package data from /Users/joykwok/Desktop/DBproject/node_modules/react-select/package.json
+331 verbose targetResolver reading package data from /Users/joykwok/Desktop/DBproject/node_modules/react-tap-event-plugin/package.json
+332 verbose targetResolver reading package data from /Users/joykwok/Desktop/DBproject/node_modules/redux/package.json
+333 verbose targetResolver reading package data from /Users/joykwok/Desktop/DBproject/node_modules/redux-promise/package.json
+334 verbose targetResolver reading package data from /Users/joykwok/Desktop/DBproject/node_modules/style-loader/package.json
+335 verbose targetResolver reading package data from /Users/joykwok/Desktop/DBproject/node_modules/webpack/package.json
+336 verbose targetResolver reading package data from /Users/joykwok/Desktop/DBproject/node_modules/.bin/webpack/package.json
+337 verbose already installed skipping react-dom@^0.14.1 /Users/joykwok/Desktop/DBproject
+338 verbose already installed skipping react@^0.14.1 /Users/joykwok/Desktop/DBproject
+339 silly install resolved []
+340 verbose unlock done using /Users/joykwok/.npm/_locks/react-select-2663e34fbee43441.lock for /Users/joykwok/Desktop/DBproject/node_modules/react-select
+341 verbose validateInstall loading /Users/joykwok/Desktop/DBproject/package.json for validation
+342 verbose stack Error: The package react@15.4.1 does not satisfy its siblings' peerDependencies requirements!
+342 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:125:32
+342 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:268:7
+342 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:142:5
+342 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+342 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+342 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+342 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+342 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+342 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+342 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+343 verbose cwd /Users/joykwok/Desktop/DBproject/server
+344 error Darwin 16.1.0
+345 error argv "/usr/local/Cellar/node/4.1.1/bin/node" "/usr/local/bin/npm" "install" "react-select" "--save"
+346 error node v4.1.1
+347 error npm  v2.14.4
+348 error code EPEERINVALID
+349 error peerinvalid The package react@15.4.1 does not satisfy its siblings' peerDependencies requirements!
+349 error peerinvalid Peer material-ui@0.16.5 wants react@^15.0.0
+349 error peerinvalid Peer react-bootstrap@0.30.7 wants react@>=0.14.0
+349 error peerinvalid Peer react-dom@15.4.1 wants react@^15.4.1
+349 error peerinvalid Peer react-dropzone@3.7.3 wants react@^0.14.0 || ^15.0.0
+349 error peerinvalid Peer react-modal@1.6.1 wants react@^0.14.0 || ^15.0.0
+349 error peerinvalid Peer react-redux@4.4.6 wants react@^0.14.0 || ^15.0.0-0 || ^15.4.0-0
+349 error peerinvalid Peer react-router@2.8.1 wants react@^0.14.0 || ^15.0.0
+349 error peerinvalid Peer react-tap-event-plugin@2.0.1 wants react@^15.4.0-0
+349 error peerinvalid Peer react-select@0.9.1 wants react@^0.14.1
+350 verbose exit [ 1, true ]
