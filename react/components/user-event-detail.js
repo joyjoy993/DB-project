@@ -16,34 +16,34 @@ class UserEventDetail extends Component {
 
     render() {
         return (
-            <PanelGroup activeKey={this.props.userevent.eid} accordion>
+            <div>
                 <Panel header={"event name: "+ this.props.userevent.ename} bsStyle="primary" eventKey={this.props.userevent.eid}>
                     {"event description: " + this.props.userevent.edescription}
-
+                </Panel>
                     <Button onClick={() => {this.setState({ collapse_open1: !this.state.collapse_open1 });}}>
                         See Report!
+                    </Button>
+
+                    <Button onClick={() => this.setState({ collapse_open: !this.state.collapse_open })}>
+                        Add Report!
                     </Button>
                     <Collapse in={this.state.collapse_open1}>
                         <div>
                             {this.state.collapse_open1 ?
-
-                                <EventReportListing eid={this.props.userevent.eid}/>
+                                <div>
+                                    <EventReportListing eid={this.props.userevent.eid}/>
+                                </div>
                                 :
                                 <div></div>
                             }
                         </div>
                     </Collapse>
-
-                    <Button onClick={() => this.setState({ collapse_open: !this.state.collapse_open })}>
-                        Add Report!
-                    </Button>
                     <Collapse in={this.state.collapse_open}>
                         <div>
                             <ReportPost eid={this.props.userevent.eid}/>
                         </div>
                     </Collapse>
-                </Panel>
-            </PanelGroup>
+            </div>
         )
     }
 

@@ -3,20 +3,31 @@ import {Modal, Tab, Col, Row, Nav, NavItem, Panel, PanelGroup, Button, Collapse,
 import {fetchEventReport} from '../actions/index';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+import axios from 'axios';
 
 class EventReportListing extends Component {
 
     constructor(props) {
         super(props);
-        this.props.fetchEventReport(this.props.eid);
+        this.state = {
+            eventreports: null
+        }
+        //this.state.fetchEventReport(this.state.eid);
+    }
+
+    componentWillMount() {
+        axios.get(`/api/v1/eventreport/${this.props.eid}`)
+            .then(res => {
+            this.setState({eventreports: res.data.eventreports});
+        });
     }
 
     render() {
         return (
             <div>
-                {this.props.eventreports ?
+                {this.state.eventreports && this.state.eventreports.length != 0 ?
                     <div>
-                        {this.props.eventreports.map((eventreport) => {
+                        {this.state.eventreports.map((eventreport) => {
                             return (
                                 <Panel header={"report title: "+ eventreport.reptitle} eventKey={eventreport.repid} bsStyle="success">
                                     {eventreport.reppic != null ?
@@ -38,7 +49,7 @@ class EventReportListing extends Component {
                     </div>
                     :
                     <div>
-                    ??
+                        <Well>No Report</Well>
                     </div>
                 }
             </div>
@@ -47,20 +58,4 @@ class EventReportListing extends Component {
 }
 
 
-
-function mapStateToProps(state) {
-    return {
-        eventreports: state.eventreports
-    }
-}
-
-function mapDispatchToProps(dispatch) {
-    return bindActionCreators(
-        {
-            fetchEventReport: fetchEventReport
-        },
-        dispatch
-    );
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(EventReportListing);
+export default EventReportListing;

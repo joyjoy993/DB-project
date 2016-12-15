@@ -94,11 +94,3 @@ export function fetchUserEvents() {
     };
 }
 
-export function fetchEventReport(event_id) {
-    const request = axios.get(`/api/v1/eventreport/${event_id}`);
-
-    return {
-        type: FETCH_EVENTREPORT,
-        payload: request
-    };
-}

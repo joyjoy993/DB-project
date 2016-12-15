@@ -8,4 +8,3 @@ export const FETCH_TAGS = 'fetch_tags';
 export const FETCH_RESULTS = 'fetch_results';
 export const FETCH_REVIEWS = 'fetch_reviews';
 export const FETCH_USEREVENTS = 'fetch_userevents';
-export const FETCH_EVENTREPORT = 'fetch_eventreport';

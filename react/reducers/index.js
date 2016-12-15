@@ -9,7 +9,6 @@ import TagsReducer from './reducer_tags';
 import ResultsReducer from './reducer_results';
 import ReviewsReducer from './reducer_reviews';
 import UserEventsReducer from './reducer_userevents';
-import EventReportReducer from './reducer_eventreports';
 
 const rootReducer = combineReducers({
     recipe: RecipeReducer,
@@ -22,7 +21,6 @@ const rootReducer = combineReducers({
     results: ResultsReducer,
     reviews: ReviewsReducer,
     userevents: UserEventsReducer,
-    eventreports: EventReportReducer
 });
 
 export default rootReducer;

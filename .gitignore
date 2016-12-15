@@ -92,3 +92,5 @@ ENV/
 node_modules/*
 static/bundle/
 *.log
+*.jpg
+*.png
