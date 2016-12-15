@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {Modal, Tab, Col, Row, Nav, NavItem, Panel, PanelGroup, Button, Collapse, Well} from 'react-bootstrap';
+import {fetchEventReport} from '../actions/index';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {fetchEventReport} from '../actions/index';
 
 class EventReportListing extends Component {
 
@@ -15,29 +15,27 @@ class EventReportListing extends Component {
         return (
             <div>
                 {this.props.eventreports ?
-                    <Panel header="Reports" eventKey="1">
+                    <div>
                         {this.props.eventreports.map((eventreport) => {
                             return (
-                                <div>
-                                    <Panel header={"report title: "+ eventreport.reptitle} bsStyle="primary">
-                                        {eventreport.reppic != null ?
-                                            <img src={"../static/img/" + eventreport.reppic} height="180px"/>
-                                            :
-                                            <div></div>
-                                        }
-                                        <p>
-                                          {"report content: " + eventreport.reptext}
-                                        </p>
-                                        <p>
-                                          {"reporter: " + eventreport.uname}
-                                        </p>
-                                    </Panel>
-                                </div>
+                                <Panel header={"report title: "+ eventreport.reptitle} eventKey={eventreport.repid} bsStyle="success">
+                                    {eventreport.reppic != null ?
+                                        <img src={"../../static/img/" + eventreport.reppic} height="180px"/>
+                                        :
+                                        <div></div>
+                                    }
+                                    <p>
+                                      {"report content: " + eventreport.reptext}
+                                    </p>
+                                    <p>
+                                      {"reporter: " + eventreport.uname}
+                                    </p>
+                                </Panel>
 
                             );
                         })
                         }
-                    </Panel>
+                    </div>
                     :
                     <div>
                     ??
@@ -47,6 +45,8 @@ class EventReportListing extends Component {
         );
     }
 }
+
+
 
 function mapStateToProps(state) {
     return {

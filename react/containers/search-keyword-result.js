@@ -54,11 +54,11 @@ class SearchKeywordResult extends Component {
                     <Card style={styles.card}>
                         {recipe.pic == null ?
                             <CardMedia mediaStyle={styles.cardMedia}>
-                                <img src="../static/img/default.jpg"/>
+                                <img src="../../static/img/default.jpg"/>
                             </CardMedia>
                             :
                             <CardMedia mediaStyle={styles.cardMedia}>
-                                <img src={"../static/img/" + recipe.pic}/>
+                                <img src={"../../static/img/" + recipe.pic}/>
                             </CardMedia>
                         }
                         <CardTitle title={recipe.rtitle}
