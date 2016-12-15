@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {fetchEvents} from '../actions/index';
+import {fetchEvents, fetchUserEvents} from '../actions/index';
 import CircularProgress from 'material-ui/CircularProgress';
 import {Modal, Panel, Button, Well, PanelGroup} from 'react-bootstrap';
 import Chip from 'material-ui/Chip';
@@ -33,6 +33,7 @@ class Events extends Component {
             op: op
         }).then(() => {
             this.props.fetchEvents(this.props.params.id);
+            this.props.fetchUserEvents();
         });
     }
 
@@ -94,6 +95,7 @@ class Events extends Component {
 function mapStateToProps(state) {
     return {
         events: state.events,
+        userevents: state.userevents
     }
 }
 
@@ -101,6 +103,7 @@ function mapDispatchToProps(dispatch) {
     return bindActionCreators(
         {
             fetchEvents: fetchEvents,
+            fetchUserEvents: fetchUserEvents
         },
         dispatch
     );

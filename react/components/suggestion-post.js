@@ -33,17 +33,14 @@ class SuggestionPost extends Component {
             <div>
                 <Form horizontal>
                     <FormGroup controlId="formHorizontalName">
-                        <Col sm={10}>
+                        <ControlLabel>suggestion</ControlLabel>
                         <FormControl type="text" placeholder="Suggestion" value={this.state.suggestion} onChange={e => this.setState({ suggestion: e.target.value })}/>
-                        </Col>
                     </FormGroup>
 
                     <FormGroup>
-                        <Col smOffset={2} sm={10}>
-                            <Button onClick={this.handle_post.bind(this)}>
-                            Give him/her a suggestion!
-                            </Button>
-                        </Col>
+                        <Button onClick={this.handle_post.bind(this)}>
+                        Give him/her a suggestion!
+                        </Button>
                     </FormGroup>
                 </Form>
             </div>

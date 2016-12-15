@@ -64,21 +64,22 @@ class ReviewPost extends Component {
             this.setState({status: res.status});
         });
         window.location.reload();
-        console.log(this.state);
     }
 
     render() {
 
         return (
             <div>
-                <div className="FileUpload">
-                    <Dropzone
-                        onDrop={this.onImageDrop.bind(this)}
-                        multiple={false}
-                        accept="image/*">
-                        <div>Drop an image or click to select a file to upload.</div>
-                    </Dropzone>
-                </div>
+                <Col componentClass={ControlLabel} sm={50}>
+                    <div className="FileUpload">
+                        <Dropzone
+                            onDrop={this.onImageDrop.bind(this)}
+                            multiple={false}
+                            accept="image/*">
+                            <div>Drop an image or click to select a file to upload.</div>
+                        </Dropzone>
+                    </div>
+                </Col>
                 {this.state.uploadedFile ?
                     <div>
                         Your picture: <img src={this.state.uploadedFile.preview} style={{maxWidth:"100"}}/>
@@ -89,43 +90,29 @@ class ReviewPost extends Component {
                 }
             <Form horizontal>
                 <FormGroup controlId="formHorizontalName">
-                    <Col componentClass={ControlLabel} sm={2}>
-                    review title
-                    </Col>
-                    <Col sm={10}>
+                    <ControlLabel>review title</ControlLabel>
                     <FormControl type="text" placeholder="review title" value={this.state.title} onChange={e => this.setState({ title: e.target.value })}/>
-                    </Col>
                 </FormGroup>
 
                 <FormGroup controlId="formHorizontalName">
-                    <Col componentClass={ControlLabel} sm={2}>
-                    review content
-                    </Col>
-                    <Col sm={10}>
+                    <ControlLabel>review content</ControlLabel>
                     <FormControl type="text" placeholder="review content" value={this.state.content} onChange={e => this.setState({ content: e.target.value })}/>
-                    </Col>
                 </FormGroup>
 
                 <FormGroup controlId="formHorizontalNumber">
-                    <Col componentClass={ControlLabel} sm={2}>
-                    rate
-                    </Col>
-                    <Col sm={10}>
-                        <StarRatingComponent 
-                            name="rate1" 
-                            starCount={5}
-                            value={this.state.rate}
-                            onStarClick={this.onStarClick.bind(this)}
-                        />
-                    </Col>
+                    <ControlLabel>rate</ControlLabel>
                 </FormGroup>
+                <StarRatingComponent 
+                    name="rate1" 
+                    starCount={5}
+                    value={this.state.rate}
+                    onStarClick={this.onStarClick.bind(this)}
+                />
 
                 <FormGroup>
-                    <Col smOffset={2} sm={10}>
-                        <Button onClick={this.handle_upload.bind(this)}>
-                        Post!
-                        </Button>
-                    </Col>
+                    <Button onClick={this.handle_upload.bind(this)}>
+                    Post!
+                    </Button>
                 </FormGroup>
             </Form>
             </div>

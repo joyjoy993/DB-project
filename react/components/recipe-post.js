@@ -93,14 +93,16 @@ class RecipePost extends Component {
 
         return (
             <div>
-                <div className="FileUpload">
-                    <Dropzone
-                        onDrop={this.onImageDrop.bind(this)}
-                        multiple={false}
-                        accept="image/*">
-                    <div>Drop an image or click to select a file to upload.</div>
-                    </Dropzone>
-                </div>
+                <Col componentClass={ControlLabel} sm={50}>
+                    <div className="FileUpload">
+                        <Dropzone
+                            onDrop={this.onImageDrop.bind(this)}
+                            multiple={false}
+                            accept="image/*">
+                        <div>Drop an image or click to select a file to upload.</div>
+                        </Dropzone>
+                    </div>
+                </Col>
                 {this.state.uploadedFile ?
                     <div>
                         Your picture: <img src={this.state.uploadedFile.preview} style={{maxWidth:"100"}}/>
@@ -168,7 +170,7 @@ class RecipePost extends Component {
                     }        
                 </FormGroup>
 
-
+                <ControlLabel>Choose some tags</ControlLabel>
                 <FormGroup controlId="formControlsSelectMultiple">
                     {this.props.tags ?
                         <FormControl componentClass="select" multiple onChange={e => {var newtags = this.state.tags; newtags.push(e.target.value); this.setState({ tags: newtags }) }}>

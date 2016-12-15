@@ -18,7 +18,7 @@ import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
+    <Provider store={createStoreWithMiddleware(reducers)}>
         <Router history={browserHistory}>
             <Route path="/recipes/" component={App}>
                 <IndexRoute component={RecipeListing}/>
@@ -30,5 +30,5 @@ ReactDOM.render(
                 <Route path="/search/tag/:tagid" component={SearchTagResult}/>
             </Route>
         </Router>
-  </Provider>
-  , document.querySelector('.container'));
+    </Provider>
+    , document.querySelector('.container'));

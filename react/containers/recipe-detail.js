@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {fetchRecipe, fetchReviews} from '../actions/index';
 import CircularProgress from 'material-ui/CircularProgress';
-import {Modal, Collapse, Button} from 'react-bootstrap';
+import {Modal, Collapse, Button, Col, ControlLabel} from 'react-bootstrap';
 import Chip from 'material-ui/Chip';
 import {cardStyles as styles} from '../styles/recipe-listing-cards.style';
 import {Card, CardHeader, CardText, CardMedia} from 'material-ui/Card';

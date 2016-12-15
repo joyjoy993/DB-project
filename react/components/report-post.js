@@ -63,49 +63,41 @@ class ReportPost extends Component {
 
         return (
             <div>
-            <div className="FileUpload" style={{marginLeft:"auto", marginRight:'auto'}}>
-                <Dropzone
-                    onDrop={this.onImageDrop.bind(this)}
-                    multiple={false}
-                    accept="image/*">
-                    <div>Drop an image or click to select a file to upload.</div>
-                </Dropzone>
-            </div>
-            {this.state.uploadedFile ?
-                <div>
-                    Your picture: <img src={this.state.uploadedFile.preview} style={{maxWidth:"100"}}/>
-                </div>
-                :
-                <div>
-                </div>
-            }
-            <Form horizontal>
-                <FormGroup controlId="formHorizontalName">
-                    <Col componentClass={ControlLabel} sm={2}>
-                    report title
-                    </Col>
-                    <Col sm={10}>
-                    <FormControl type="text" placeholder="report title" value={this.state.title} onChange={e => this.setState({ title: e.target.value })}/>
-                    </Col>
-                </FormGroup>
+                <Col componentClass={ControlLabel} sm={50}>
+                    <div className="FileUpload">
+                        <Dropzone
+                            onDrop={this.onImageDrop.bind(this)}
+                            multiple={false}
+                            accept="image/*">
+                            <div>Drop an image or click to select a file to upload.</div>
+                        </Dropzone>
+                    </div>
+                </Col>
+                {this.state.uploadedFile ?
+                    <div>
+                        Your picture: <img src={this.state.uploadedFile.preview} style={{maxWidth:"100"}}/>
+                    </div>
+                    :
+                    <div>
+                    </div>
+                }
+                <Form horizontal>
+                    <FormGroup controlId="formHorizontalName">
+                        <ControlLabel>report title</ControlLabel>
+                        <FormControl type="text" placeholder="report title" value={this.state.title} onChange={e => this.setState({ title: e.target.value })}/>
+                    </FormGroup>
 
-                <FormGroup controlId="formHorizontalName">
-                    <Col componentClass={ControlLabel} sm={2}>
-                    report content
-                    </Col>
-                    <Col sm={10}>
-                    <FormControl type="text" placeholder="review content" value={this.state.content} onChange={e => this.setState({ content: e.target.value })}/>
-                    </Col>
-                </FormGroup>
+                    <FormGroup controlId="formHorizontalName">
+                        <ControlLabel>report content</ControlLabel>
+                        <FormControl type="text" placeholder="review content" value={this.state.content} onChange={e => this.setState({ content: e.target.value })}/>
+                    </FormGroup>
 
-                <FormGroup>
-                    <Col smOffset={2} sm={10}>
+                    <FormGroup>
                         <Button onClick={this.handle_upload.bind(this)}>
                         Post!
                         </Button>
-                    </Col>
-                </FormGroup>
-            </Form>
+                    </FormGroup>
+                </Form>
             </div>
         );
     }

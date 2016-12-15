@@ -32,7 +32,7 @@ class EventCreate extends Component {
         return (
             <div>
                 <Button onClick={() => this.setState({ collapse_open: !this.state.collapse_open })}>
-                            Add Event!
+                Add Event!
                 </Button>
                 <Collapse in={this.state.collapse_open}>
                     <Form horizontal>
