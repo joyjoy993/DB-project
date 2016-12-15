@@ -43,11 +43,11 @@ class RecipeDetail extends Component {
                         <div>
                             {this.props.recipe.pic == null ?
                             <CardMedia>
-                                <img src="../static/img/default.jpg" height="180px"/>
+                                <img src="../../static/img/default.jpg" height="180px"/>
                             </CardMedia>
                             :
                             <CardMedia>
-                                <img src={"../static/img/" + this.props.recipe.pic} height="180px"/>
+                                <img src={"../../static/img/" + this.props.recipe.pic} height="180px"/>
                             </CardMedia>
                             }
                             <CardText>
@@ -140,7 +140,13 @@ class RecipeDetail extends Component {
                                 return (
                                     <Chip
                                         key={tag.key}
-                                        style={styles.chip}>
+                                        style={styles.chip}
+                                        onClick={() => {
+                                            browserHistory.push('/search/tag/'+tag.key);
+                                            window.location.reload();
+                                        }}
+                                        onTouchTap={() => {}}
+                                        >
                                     {tag.title}
                                     </Chip>
                                 )

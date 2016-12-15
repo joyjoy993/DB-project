@@ -3,7 +3,6 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import {appStyles as styles} from '../styles/app.style.js';
-
 const muiTheme = getMuiTheme(lightBaseTheme);
 
 

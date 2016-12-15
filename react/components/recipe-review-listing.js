@@ -58,7 +58,7 @@ class RecipeReviewListing extends Component {
                                                 </p>
                                             }
                                     </Panel>
-                                    {this.props.user != null && this.props.uname == this.props.user.uname ?
+                                    {this.props.user != null && this.props.uname == this.props.user.uname && review.suggestion == null ?
                                         <div>
                                             <Button onClick={() => this.setState({ collapse_open: !this.state.collapse_open })}>
                                                     Add Suggestion!

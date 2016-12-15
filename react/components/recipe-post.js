@@ -93,136 +93,136 @@ class RecipePost extends Component {
 
         return (
             <div>
-            <div className="FileUpload">
-                <Dropzone
-                    onDrop={this.onImageDrop.bind(this)}
-                    multiple={false}
-                    accept="image/*">
-                <div>Drop an image or click to select a file to upload.</div>
-                </Dropzone>
-            </div>
-            {this.state.uploadedFile ?
-                <div>
-                    Your picture: <img src={this.state.uploadedFile.preview} style={{maxWidth:"100"}}/>
+                <div className="FileUpload">
+                    <Dropzone
+                        onDrop={this.onImageDrop.bind(this)}
+                        multiple={false}
+                        accept="image/*">
+                    <div>Drop an image or click to select a file to upload.</div>
+                    </Dropzone>
                 </div>
-                :
-                <div>
-                </div>
-            }
-            <Form horizontal>
-                <FormGroup controlId="formHorizontalName">
-                    <Col componentClass={ControlLabel} sm={2}>
-                    recipe title
-                    </Col>
-                    <Col sm={10}>
-                    <FormControl type="text" placeholder="recipe title" value={this.state.rtitle} onChange={e => this.setState({ rtitle: e.target.value })}/>
-                    </Col>
-                </FormGroup>
-
-                <FormGroup controlId="formHorizontalNumber">
-                    <Col componentClass={ControlLabel} sm={2}>
-                    number of serving
-                    </Col>
-                    <Col sm={10}>
-                    <FormControl type="number" placeholder="number of serving" value={this.state.numofserving} onChange={e => this.setState({ numofserving: e.target.value })}/>
-                    </Col>
-                </FormGroup>
-
-                <Form inline>
+                {this.state.uploadedFile ?
+                    <div>
+                        Your picture: <img src={this.state.uploadedFile.preview} style={{maxWidth:"100"}}/>
+                    </div>
+                    :
+                    <div>
+                    </div>
+                }
+                <Form horizontal>
                     <FormGroup controlId="formHorizontalName">
                         <Col componentClass={ControlLabel} sm={2}>
-                        ingredient
+                        recipe title
                         </Col>
                         <Col sm={10}>
-                        <FormControl type="text" placeholder="ingredient" value={this.state.ingredient} onChange={e => this.setState({ ingredient: e.target.value })}/>
-                        </Col>
-                    </FormGroup>
-                    {' '}
-                    <FormGroup controlId="formHorizontalName">
-                        <Col componentClass={ControlLabel} sm={2}>
-                        unit
-                        </Col>
-                        <Col sm={10}>
-                        <FormControl type="text" placeholder="name of unit" value={this.state.unit} onChange={e => this.setState({ unit: e.target.value })}/>
+                        <FormControl type="text" placeholder="recipe title" value={this.state.rtitle} onChange={e => this.setState({ rtitle: e.target.value })}/>
                         </Col>
                     </FormGroup>
 
-                </Form>
-
-                <Form inline>
                     <FormGroup controlId="formHorizontalNumber">
                         <Col componentClass={ControlLabel} sm={2}>
-                        amount
+                        number of serving
                         </Col>
                         <Col sm={10}>
-                        <FormControl type="number" placeholder="amount" value={this.state.amount} onChange={e => this.setState({ amount: e.target.value })}/>
+                        <FormControl type="number" placeholder="number of serving" value={this.state.numofserving} onChange={e => this.setState({ numofserving: e.target.value })}/>
                         </Col>
                     </FormGroup>
-                    {' '}
+
+                    <Form inline>
+                        <FormGroup controlId="formHorizontalName">
+                            <Col componentClass={ControlLabel} sm={2}>
+                            ingredient
+                            </Col>
+                            <Col sm={10}>
+                            <FormControl type="text" placeholder="ingredient" value={this.state.ingredient} onChange={e => this.setState({ ingredient: e.target.value })}/>
+                            </Col>
+                        </FormGroup>
+                        {' '}
+                        <FormGroup controlId="formHorizontalName">
+                            <Col componentClass={ControlLabel} sm={2}>
+                            unit
+                            </Col>
+                            <Col sm={10}>
+                            <FormControl type="text" placeholder="name of unit" value={this.state.unit} onChange={e => this.setState({ unit: e.target.value })}/>
+                            </Col>
+                        </FormGroup>
+
+                    </Form>
+
+                    <Form inline>
+                        <FormGroup controlId="formHorizontalNumber">
+                            <Col componentClass={ControlLabel} sm={2}>
+                            amount
+                            </Col>
+                            <Col sm={10}>
+                            <FormControl type="number" placeholder="amount" value={this.state.amount} onChange={e => this.setState({ amount: e.target.value })}/>
+                            </Col>
+                        </FormGroup>
+                        {' '}
+                        <FormGroup>
+                            <Col smOffset={2} sm={10}>
+                                <Checkbox onChange={e => this.setState({ solid: !this.state.solid})}>solid</Checkbox>
+                            </Col>
+                        </FormGroup>
+                    </Form>
+
                     <FormGroup>
                         <Col smOffset={2} sm={10}>
-                            <Checkbox onChange={e => this.setState({ solid: !this.state.solid})}>solid</Checkbox>
+                            <Button onClick={this.add_ingredient.bind(this)}>
+                            add ingredient
+                            </Button>
+                        </Col>
+                    </FormGroup>
+                    <FormGroup controlId="formControlsSelectMultiple">
+                        {this.state.ingredients.length != 0 ?
+                            <FormControl componentClass="select" multiple>
+                                {this.state.ingredients.map((ingredient) => {
+                                    return (
+                                        <option value={ingredient.tname}>{ingredient.ingredient + ": " + ingredient.amount + " " + ingredient.unit}</option>
+                                    )
+                                })
+                                }
+                            </FormControl>
+                            :
+                            <div>
+                            </div>
+                        }        
+                    </FormGroup>
+
+
+                    <FormGroup controlId="formControlsSelectMultiple">
+                        {this.props.tags ?
+                            <FormControl componentClass="select" multiple onChange={e => {var newtags = this.state.tags; newtags.push(e.target.value); this.setState({ tags: newtags }) }}>
+                                {this.props.tags.map((tag) => {
+                                    return (
+                                        <option value={tag.tid}>{tag.tname}</option>
+                                    )
+                                })
+                                }
+                            </FormControl>
+                            :
+                            <div>
+                            </div>
+                        }        
+                    </FormGroup>
+
+                    <FormGroup controlId="formHorizontalName">
+                            <Col componentClass={ControlLabel} sm={2}>
+                            description
+                            </Col>
+                            <Col sm={10}>
+                            <FormControl componentClass="textarea" placeholder="description" onChange={e => this.setState({ description: e.target.value })}/>
+                            </Col>
+                        </FormGroup>
+
+                    <FormGroup>
+                        <Col smOffset={2} sm={10}>
+                            <Button onClick={this.handle_upload.bind(this)}>
+                            Post!
+                            </Button>
                         </Col>
                     </FormGroup>
                 </Form>
-
-                <FormGroup>
-                    <Col smOffset={2} sm={10}>
-                        <Button onClick={this.add_ingredient.bind(this)}>
-                        add ingredient
-                        </Button>
-                    </Col>
-                </FormGroup>
-                <FormGroup controlId="formControlsSelectMultiple">
-                    {this.state.ingredients.length != 0 ?
-                        <FormControl componentClass="select" multiple>
-                            {this.state.ingredients.map((ingredient) => {
-                                return (
-                                    <option value={ingredient.tname}>{ingredient.ingredient + ": " + ingredient.amount + " " + ingredient.unit}</option>
-                                )
-                            })
-                            }
-                        </FormControl>
-                        :
-                        <div>
-                        </div>
-                    }        
-                </FormGroup>
-
-
-                <FormGroup controlId="formControlsSelectMultiple">
-                    {this.props.tags ?
-                        <FormControl componentClass="select" multiple onChange={e => {var newtags = this.state.tags; newtags.push(e.target.value); this.setState({ tags: newtags }) }}>
-                            {this.props.tags.map((tag) => {
-                                return (
-                                    <option value={tag.tid}>{tag.tname}</option>
-                                )
-                            })
-                            }
-                        </FormControl>
-                        :
-                        <div>
-                        </div>
-                    }        
-                </FormGroup>
-
-                <FormGroup controlId="formHorizontalName">
-                        <Col componentClass={ControlLabel} sm={2}>
-                        description
-                        </Col>
-                        <Col sm={10}>
-                        <FormControl type="text" placeholder="description" onChange={e => this.setState({ description: e.target.value })}/>
-                        </Col>
-                    </FormGroup>
-
-                <FormGroup>
-                    <Col smOffset={2} sm={10}>
-                        <Button onClick={this.handle_upload.bind(this)}>
-                        Post!
-                        </Button>
-                    </Col>
-                </FormGroup>
-            </Form>
             </div>
         );
     }

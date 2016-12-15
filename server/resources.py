@@ -315,16 +315,28 @@ class PostRecipeResource(Resource):
                 db.session.commit()
 
             for i in ingredients:
-                form_attributes_unit = {'unitname': i['unit'], 'unittype': i['solid']}
-                newUnit = Unit(**form_attributes_unit)
-                db.session.add(newUnit)
-                db.session.commit()
-                db.session.refresh(newUnit)
-                form_attributes_ingredient = {'ingname': i['ingredient'], 'unitid': newUnit.unitid}
-                newIngredient = Ingredient(**form_attributes_ingredient)
-                db.session.add(newIngredient)
-                db.session.commit()
-                db.session.refresh(newIngredient)
+
+                newUnit = None
+                newIngredient = None
+
+                newUnit = Unit.query.filter_by(unitname=i['unit']).first()
+                newIngredient = Ingredient.query.filter_by(ingname=i['ingredient']).first()
+                checkUnit = newUnit
+
+                if newUnit == None:
+                    form_attributes_unit = {'unitname': i['unit'], 'unittype': i['solid']}
+                    newUnit = Unit(**form_attributes_unit)
+                    db.session.add(newUnit)
+                    db.session.commit()
+                    db.session.refresh(newUnit)
+
+                if (newIngredient == None) or (newIngredient != None and checkUnit == None):
+                    form_attributes_ingredient = {'ingname': i['ingredient'], 'unitid': newUnit.unitid}
+                    newIngredient = Ingredient(**form_attributes_ingredient)
+                    db.session.add(newIngredient)
+                    db.session.commit()
+                    db.session.refresh(newIngredient)
+
                 form_attributes_Recipecontainingredient = {'rid': newrecipe.rid, 'ingid': newIngredient.ingid, 'amount': i['amount']}
                 newRecipecontainingredient = Recipecontainingredient(**form_attributes_Recipecontainingredient)
                 db.session.add(newRecipecontainingredient)
@@ -557,6 +569,84 @@ class EventReportResource(Resource):
         except Exception as e:
             print e
             abort(400)
+
+class RecipeWithRelatedTag(Resource):
+
+    def post(self):
+        try:
+            tagid = request.json.get('tagid')
+            recipes = Recipe.query\
+                        .outerjoin(Recipepic)\
+                        .outerjoin(Recipetag)\
+                        .add_entity(Recipepic)\
+                        .filter(Recipetag.tid==tagid)\
+                        .all()
+            recipe_list = []
+            for recipe in recipes:
+                recipe_data = recipe[0]
+                pic_data = None
+                if recipe[1] != None:
+                    pic_data = recipe[1].foodpic 
+                data = {
+                    'rid': recipe_data.rid, 
+                    'rtitle': recipe_data.rtitle,
+                    'numofserving': recipe_data.numofserving,
+                    'description': recipe_data.description,
+                    'uname': recipe_data.uname,
+                    'pic': pic_data
+                }
+                recipe_list.append(data)
+            return { 'recipes': recipe_list }, 200
+
+        except Exception as e:
+            print e
+            abort(400)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -8,6 +8,7 @@ import {Card, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import {cardStyles as styles} from '../styles/recipe-listing-cards.style';
 import {Link} from 'react-router';
 import NavigationBar from '../components/navigation-bar';
+import TextTruncate from 'react-text-truncate';
 
 class RecipeListing extends Component {
 
@@ -67,7 +68,16 @@ class RecipeListing extends Component {
                                     <div style={styles.col.title}>
                                         description
                                     </div>
-                                    {recipe.description == null ? "null" : recipe.description}
+                                    {recipe.description == null 
+                                        ? 
+                                        "null" 
+                                        : 
+                                        <TextTruncate
+                                            line={1}
+                                            truncateText="…"
+                                            text={recipe.description}
+                                        />
+                                    }
                                 </Col>
                             </Row>
 

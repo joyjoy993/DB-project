@@ -17,7 +17,7 @@ class NavigationBar extends Component {
     }
 
     search() {
-        browserHistory.push('/search/'+this.state.keyword);
+        browserHistory.push('/search/keyword/'+this.state.keyword);
         window.location.reload();
     }
 

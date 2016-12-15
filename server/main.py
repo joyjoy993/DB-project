@@ -10,8 +10,12 @@ import uuid
 def recipes():
     return render_template('index.html')
 
-@app.route('/search/<keyword>')
-def search(keyword=None):
+@app.route('/search/keyword/<keyword>')
+def searchKeyword(keyword=None):
+    return render_template('search.html')
+
+@app.route('/search/tag/<tag>')
+def searchTag(tag=None):
     return render_template('search.html')
 
 @app.route('/recipes/<id>')
