@@ -66,7 +66,13 @@ class RecipeDetail extends Component {
                                                 description
                                             </TableRowColumn>
                                             <TableRowColumn style={styles.tableRow}>
-                                                {this.props.recipe.description == null ? "null" : this.props.recipe.description}
+                                                {this.props.recipe.description == null ? 
+                                                    "null" 
+                                                    : 
+                                                    this.props.recipe.description.split("\n").map(i => {
+                                                        return <div>{i}</div>;
+                                                    })
+                                                }
                                             </TableRowColumn>
                                         </TableRow>
                                         <TableRow selectable={false}>
