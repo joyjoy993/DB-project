@@ -26,7 +26,7 @@ class NavigationBar extends Component {
             <Navbar inverse style={styles.navbar}>
                 <Navbar.Header>
                     <Navbar.Brand>
-                        <a href={window.location.origin + "/recipes/"} style={styles.navLabel}>Recipe Listing page</a>
+                        <a href={window.location.origin + "/recipes/"} style={styles.navLabel}>😋Cookzilla😋</a>
                     </Navbar.Brand>
                     <Navbar.Toggle />
                 </Navbar.Header>
