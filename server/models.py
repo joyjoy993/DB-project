@@ -85,7 +85,7 @@ class Recipecontainingredient(db.Model):
     __tablename__ = 'Recipecontainingredient'
     rid = db.Column(db.Integer, db.ForeignKey('Recipe.rid'), primary_key=True, nullable=False)
     ingid = db.Column(db.Integer, db.ForeignKey('Ingredient.ingid'), primary_key=True, nullable=False)
-    amount = db.Column(db.Integer, nullable=False)
+    amount = db.Column(db.Float, nullable=False)
 
     def __init__(self, **kwargs):
         db.Model.__init__(self, **kwargs)

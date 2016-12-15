@@ -93,16 +93,14 @@ class RecipePost extends Component {
 
         return (
             <div>
-                <Col componentClass={ControlLabel} sm={50}>
-                    <div className="FileUpload">
-                        <Dropzone
-                            onDrop={this.onImageDrop.bind(this)}
-                            multiple={false}
-                            accept="image/*">
-                        <div>Drop an image or click to select a file to upload.</div>
-                        </Dropzone>
-                    </div>
-                </Col>
+                <div className="FileUpload">
+                    <Dropzone
+                        onDrop={this.onImageDrop.bind(this)}
+                        multiple={false}
+                        accept="image/*">
+                    <div>Drop an image or click to select a file to upload.</div>
+                    </Dropzone>
+                </div>
                 {this.state.uploadedFile ?
                     <div>
                         Your picture: <img src={this.state.uploadedFile.preview} style={{maxWidth:"100"}}/>
