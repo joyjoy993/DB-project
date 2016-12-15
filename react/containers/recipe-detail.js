@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {fetchRecipe, fetchReviews} from '../actions/index';
+import {fetchRecipe, fetchReviews, fetchCurrentUser} from '../actions/index';
 import CircularProgress from 'material-ui/CircularProgress';
 import {Modal, Collapse, Button, Col, ControlLabel} from 'react-bootstrap';
 import Chip from 'material-ui/Chip';
@@ -17,6 +17,7 @@ class RecipeDetail extends Component {
 
     constructor(props) {
         super(props);
+        this.props.fetchCurrentUser();
         this.props.fetchRecipe(this.props.params.id);
         this.props.fetchReviews(this.props.params.id);
         this.state = {
@@ -123,14 +124,21 @@ class RecipeDetail extends Component {
                                             :
                                             <CircularProgress size={60} style={{margin: "auto", display: "block"}}/>
                                         }
-                                        <Button onClick={() => this.setState({ collapse_open: !this.state.collapse_open })}>
-                                                            Add Review!
-                                        </Button>
-                                        <Collapse in={this.state.collapse_open}>
+                                        {this.props.user ?
                                             <div>
-                                                <ReviewPost recipeid={this.props.params.id}/>
+                                                <Button onClick={() => this.setState({ collapse_open: !this.state.collapse_open })}>
+                                                                    Add Review!
+                                                </Button>
+                                                <Collapse in={this.state.collapse_open}>
+                                                    <div>
+                                                        <ReviewPost recipeid={this.props.params.id}/>
+                                                    </div>
+                                                </Collapse>
                                             </div>
-                                        </Collapse>
+                                            :
+                                            <div>
+                                            </div>
+                                        }
                                     </div>
                                 </Collapse>
                             </CardText>
@@ -170,7 +178,8 @@ class RecipeDetail extends Component {
 function mapStateToProps(state) {
     return {
         recipe: state.recipe,
-        reviews: state.reviews
+        reviews: state.reviews,
+        user: state.user
     }
 }
 
@@ -178,7 +187,8 @@ function mapDispatchToProps(dispatch) {
     return bindActionCreators(
         {
             fetchRecipe: fetchRecipe,
-            fetchReviews: fetchReviews
+            fetchReviews: fetchReviews,
+            fetchCurrentUser: fetchCurrentUser
         },
         dispatch
     );
