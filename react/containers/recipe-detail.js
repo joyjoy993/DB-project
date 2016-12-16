@@ -31,18 +31,15 @@ class RecipeDetail extends Component {
         document.body.style.overflowY = "hidden";
     }
 
-    componentDidUpdate() {
+    close() {
         if (this.props.recipe && !this.state.log) {
+            this.setState({log: true});
             axios.post("/api/v1/log/tag/", {
                 tags: this.props.recipe.tags
             }).then(res => {
                 this.setState({status: res.status});
             });
-            this.setState({log: true});
         }
-    }
-
-    close() {
         this.setState({ showModal: false });
     }
 

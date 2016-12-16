@@ -11,6 +11,7 @@ class LogRecentTag(Resource):
     def post(self):
         try:
             tags = request.json.get('tags')
+            print tags
             for i in tags:
                 queryTag = Taglog.query.filter(Taglog.uname==current_user.uname).filter(Taglog.tid==i['key']).first()
                 if queryTag == None:
@@ -38,13 +39,13 @@ class TagRecommandation(Resource):
                         .outerjoin(Taglog)\
                         .add_entity(Recipepic)\
                         .filter(Taglog.uname==current_user.uname)\
-                        .order_by(Taglog.times)\
+                        .order_by(Taglog.times.desc())\
                         .limit(5)\
                         .all()
             tags = Tag.query\
                     .outerjoin(Taglog)\
                     .filter(Taglog.uname==current_user.uname)\
-                    .order_by(Taglog.times)\
+                    .order_by(Taglog.times.desc())\
                     .limit(5)\
                     .all()
 
