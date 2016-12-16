@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {
     FETCH_RECIPES, FETCH_RECIPE, FETCH_CURRENTUSER, FETCH_GROUPS, FETCH_POSTS, FETCH_EVENTS,
-    FETCH_TAGS, FETCH_EVENTREPORT, FETCH_RESULTS, FETCH_USEREVENTS, FETCH_REVIEWS
+    FETCH_TAGS, FETCH_EVENTREPORT, FETCH_RESULTS, FETCH_USEREVENTS, FETCH_REVIEWS, FETCH_TAGRECOMMANDATION
 } from './const';
 
 export function fetchRecipes() {
@@ -93,4 +93,13 @@ export function fetchUserEvents() {
         payload: request
     };
 }
+export function fetchTagRecommandation() {
+    const request = axios.get('/api/v1/recommandation/tag/');
+
+    return {
+        type: FETCH_TAGRECOMMANDATION,
+        payload: request
+    };
+}
+
 

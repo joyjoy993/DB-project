@@ -3,20 +3,21 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import CircularProgress from 'material-ui/CircularProgress';
 import {Link} from 'react-router';
-import {Modal, Tab, Col, Row, Nav, NavItem, Panel, PanelGroup} from 'react-bootstrap';
+import {Modal, Tab, Col, Row, Nav, NavItem, Panel, PanelGroup, ControlLabel} from 'react-bootstrap';
 import Chip from 'material-ui/Chip';
 import {cardStyles as styles} from '../styles/recipe-listing-cards.style';
 import {Card, CardHeader, CardText, CardMedia} from 'material-ui/Card';
 import {List} from 'material-ui/List';
 import {Table, TableBody, TableRow, TableRowColumn} from 'material-ui/Table';
 import NavigationBar from '../components/navigation-bar';
-import {fetchCurrentUser, fetchGroups, fetchPosts, fetchUserEvents} from '../actions/index';
+import {fetchCurrentUser, fetchGroups, fetchPosts, fetchUserEvents, fetchTagRecommandation} from '../actions/index';
 import ProfileDetail from '../components/profile-detail';
 import GroupDetail from '../components/group-detail';
 import PostDetail from '../components/post-detail';
 import RecipePost from '../components/recipe-post';
 import GroupCreate from '../components/group-create';
 import UserEvents from '../components/user-events';
+import { browserHistory } from 'react-router';
 
 class Profile extends Component {
 
@@ -26,6 +27,7 @@ class Profile extends Component {
         this.props.fetchCurrentUser();
         this.props.fetchGroups();
         this.props.fetchPosts();
+        this.props.fetchTagRecommandation();
     }
 
     render() {
@@ -50,6 +52,9 @@ class Profile extends Component {
                                 </NavItem>
                                 <NavItem eventKey="posts">
                                 Your Posts
+                                </NavItem>
+                                <NavItem eventKey="recommand">
+                                Some recommanded recipes
                                 </NavItem>
                                 <NavItem eventKey="getpost">
                                 Get Post Now!
@@ -98,6 +103,35 @@ class Profile extends Component {
                                     }
                                 </Tab.Pane>
 
+                                <Tab.Pane eventKey="recommand">
+                                    {
+                                        this.props.tagrecommandation ?
+                                        <div>
+                                            <div style={styles.wrapper}>
+                                                <ControlLabel>Your favorite tags:</ControlLabel>
+                                                {this.props.tagrecommandation.tags.map((tag) => {
+                                                    return (
+                                                        <Chip
+                                                            key={tag.tid}
+                                                            style={styles.chip}
+                                                            onClick={() => {
+                                                                browserHistory.push('/search/tag/'+tag.tid);
+                                                                window.location.reload();
+                                                            }}
+                                                            onTouchTap={() => {}}
+                                                            >
+                                                        {tag.tname}
+                                                        </Chip>
+                                                    )
+                                                })}
+                                            </div>
+                                            <PostDetail posts={this.props.tagrecommandation.recipes}/>
+                                        </div>
+                                        :
+                                        <CircularProgress size={60} style={{margin: "auto", display: "block"}}/>
+                                    }
+                                </Tab.Pane>
+
                                 <Tab.Pane eventKey="getpost">
                                     <RecipePost/>
                                 </Tab.Pane>
@@ -115,7 +149,8 @@ function mapStateToProps(state) {
         user: state.user,
         groups: state.groups,
         posts: state.posts,
-        userevents: state.userevents
+        userevents: state.userevents,
+        tagrecommandation: state.tagrecommandation
     }
 }
 
@@ -125,7 +160,8 @@ function mapDispatchToProps(dispatch) {
             fetchCurrentUser: fetchCurrentUser,
             fetchGroups: fetchGroups,
             fetchPosts: fetchPosts,
-            fetchUserEvents: fetchUserEvents
+            fetchUserEvents: fetchUserEvents,
+            fetchTagRecommandation: fetchTagRecommandation
         },
         dispatch
     );

@@ -25,7 +25,61 @@ class LogRecentTag(Resource):
 
         except Exception as e:
             print e
-            abort(400) 
+            abort(400)
+
+class TagRecommandation(Resource):
+
+    def get(self):
+        try:
+            recipes = Recipe.query\
+                        .outerjoin(Recipepic)\
+                        .outerjoin(Recipetag)\
+                        .outerjoin(Tag)\
+                        .outerjoin(Taglog)\
+                        .add_entity(Recipepic)\
+                        .filter(Taglog.uname==current_user.uname)\
+                        .order_by(Taglog.times)\
+                        .limit(5)\
+                        .all()
+            tags = Tag.query\
+                    .outerjoin(Taglog)\
+                    .filter(Taglog.uname==current_user.uname)\
+                    .order_by(Taglog.times)\
+                    .limit(5)\
+                    .all()
+
+            recipe_list = []
+            tag_list = []
+
+            for recipe in recipes:
+                recipe_data = recipe[0]
+                pic_data = None
+                if recipe[1] != None:
+                    pic_data = recipe[1].foodpic 
+                data = {
+                    'rid': recipe_data.rid, 
+                    'rtitle': recipe_data.rtitle,
+                    'numofserving': recipe_data.numofserving,
+                    'description': recipe_data.description,
+                    'uname': recipe_data.uname,
+                    'pic': pic_data
+                }
+                recipe_list.append(data)
+
+            for tag in tags:
+                tag_list.append({
+                        'tid': tag.tid,
+                        'tname': tag.tname
+                    })
+            return { 'tagrecommandation': {
+                        'recipes': recipe_list,
+                        'tags': tag_list
+                        }
+                    }, 200
+
+        except Exception as e:
+            print e
+            abort(400)
 
 
 class EventResoure(Resource):

@@ -41,6 +41,7 @@ api.add_resource(RecipeWithRelatedTag,      '/api/v1/search/tag/')
 
 #recommandation
 api.add_resource(LogRecentTag,              '/api/v1/log/tag/')
+api.add_resource(TagRecommandation,         '/api/v1/recommandation/tag/')
 
 
 
