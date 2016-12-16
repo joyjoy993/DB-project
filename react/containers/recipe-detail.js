@@ -12,6 +12,7 @@ import {Table, TableBody, TableRow, TableRowColumn} from 'material-ui/Table';
 import RecipeReviewListing from '../components/recipe-review-listing';
 import ReviewPost from '../components/review-post';
 import { browserHistory } from 'react-router'
+import axios from 'axios';
 
 class RecipeDetail extends Component {
 
@@ -23,10 +24,22 @@ class RecipeDetail extends Component {
         this.state = {
             showModal: true,
             collapse_open: false,
-            showreviews: false
+            showreviews: false,
+            log: false
 
         };
         document.body.style.overflowY = "hidden";
+    }
+
+    componentDidUpdate() {
+        if (this.props.recipe && !this.state.log) {
+            axios.post("/api/v1/log/tag/", {
+                tags: this.props.recipe.tags
+            }).then(res => {
+                this.setState({status: res.status});
+            });
+            this.setState({log: true});
+        }
     }
 
     close() {

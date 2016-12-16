@@ -6,6 +6,28 @@ from datetime import timedelta
 import json
 from flask_login import login_required, login_user, logout_user, current_user, LoginManager
 
+class LogRecentTag(Resource):
+
+    def post(self):
+        try:
+            tags = request.json.get('tags')
+            for i in tags:
+                queryTag = Taglog.query.filter(Taglog.uname==current_user.uname).filter(Taglog.tid==i['key']).first()
+                if queryTag == None:
+                    form_attributes = {'uname': current_user.uname, 'tid': i['key'], 'times': 1}
+                    newTaglog = Taglog(**form_attributes)
+                    db.session.add(newTaglog)
+                    db.session.commit()
+                else:
+                    queryTag.times = queryTag.times + 1
+                    db.session.commit()
+            return json.dumps({'message': 'SUCCESS'}), 200, {'ContentType': 'application/json'}
+
+        except Exception as e:
+            print e
+            abort(400) 
+
+
 class EventResoure(Resource):
 
     def get(self, group_id):

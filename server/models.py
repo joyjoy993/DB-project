@@ -1,6 +1,16 @@
 from app import db
 from flask.ext.login import UserMixin
 
+class Taglog(db.Model):
+    __tablename__ = 'Taglog'
+    logid = db.Column(db.Integer, primary_key=True)
+    uname = db.Column(db.String(256), db.ForeignKey('User.uname'), nullable=False)
+    tid = db.Column(db.Integer, db.ForeignKey('Tag.tid'), nullable=False)
+    times = db.Column(db.Integer, nullable=False, default=1)
+
+    def __init__(self, **kwargs):
+        db.Model.__init__(self, **kwargs)
+
 class Event(db.Model):
     __tablename__ = 'Event'
     eid = db.Column(db.Integer, primary_key=True)

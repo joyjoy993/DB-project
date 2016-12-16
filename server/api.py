@@ -38,3 +38,9 @@ api.add_resource(EventCreationResource,     '/api/v1/event-creation/')
 #search
 api.add_resource(SearchResource,            '/api/v1/search/keyword/')
 api.add_resource(RecipeWithRelatedTag,      '/api/v1/search/tag/')
+
+#recommandation
+api.add_resource(LogRecentTag,              '/api/v1/log/tag/')
+
+
+
