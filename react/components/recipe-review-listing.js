@@ -6,7 +6,6 @@ import {Link} from 'react-router';
 import {fetchCurrentUser} from '../actions/index';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import SuggestionPost from '../components/suggestion-post';
 import StarRatingComponent from 'react-star-rating-component';
 import RecipeReviewDetail from '../components/recipe-review-detail';
 

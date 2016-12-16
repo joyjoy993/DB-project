@@ -121,11 +121,11 @@ class Reviewpic(db.Model):
     def __init__(self, **kwargs):
         db.Model.__init__(self, **kwargs)
 
-class Reviewsuggestion(db.Model):
-    __tablename__ = 'Reviewsuggestion'
-    sugid = db.Column(db.Integer, primary_key=True)
+class PosterReply(db.Model):
+    __tablename__ = 'PosterReply'
+    repid = db.Column(db.Integer, primary_key=True)
     revid = db.Column(db.Integer, db.ForeignKey('Review.revid'), nullable=False)
-    sugcontent = db.Column(db.Text(), nullable=False)
+    repcontent = db.Column(db.Text(), nullable=False)
 
     def __init__(self, **kwargs):
         db.Model.__init__(self, **kwargs)

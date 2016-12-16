@@ -26,7 +26,7 @@ api.add_resource(RecipeResource,            '/api/v1/recipes/<string:recipe_id>'
 api.add_resource(PostRecipeResource,        '/api/v1/postrecipe/')
 api.add_resource(RecipeReviewResource,      '/api/v1/reviews/<string:recipe_id>')
 api.add_resource(PostReviewResource,        '/api/v1/postreview/')
-api.add_resource(PostSuggestionResource,    '/api/v1/postsuggestion/')
+api.add_resource(PosterReplyResource,       '/api/v1/posterreply/')
 
 #Group
 api.add_resource(UserGroupResource,         '/api/v1/user-groups/')

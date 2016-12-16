@@ -401,16 +401,16 @@ class PostReportResource(Resource):
             print e
             abort(400)
 
-class PostSuggestionResource(Resource):
+class PosterReplyResource(Resource):
 
     def post(self):
         try:
             revid = request.json.get('revid')
-            suggestion = request.json.get('suggestion')
+            reply = request.json.get('reply')
             
-            form_attributes = {'revid': revid, 'sugcontent': suggestion}
-            newSuggestion = Reviewsuggestion(**form_attributes)
-            db.session.add(newSuggestion)
+            form_attributes = {'revid': revid, 'repcontent': reply}
+            newReply = PosterReply(**form_attributes)
+            db.session.add(newReply)
             db.session.commit()
             
             return json.dumps({'message': 'SUCCESS'}), 200, {'ContentType': 'application/json'}
@@ -440,9 +440,9 @@ class RecipeReviewResource(Resource):
     def get(self, recipe_id):
         try:
             review = Review.query.outerjoin(Reviewpic)\
-                    .outerjoin(Reviewsuggestion)\
+                    .outerjoin(PosterReply)\
                     .add_entity(Reviewpic)\
-                    .add_entity(Reviewsuggestion)\
+                    .add_entity(PosterReply)\
                     .filter(Review.rid==recipe_id)\
                     .all()
             review_list = []
@@ -455,7 +455,7 @@ class RecipeReviewResource(Resource):
                     'rate': i[0].rate,
                     'user': i[0].uname,
                     'pic': i[1].revpic if i[1] is not None else None,
-                    'suggestion': i[2].sugcontent if i[2] is not None else None
+                    'reply': i[2].repcontent if i[2] is not None else None
                     })
             return {'reviews': review_list}, 200
 

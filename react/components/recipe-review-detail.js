@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Modal, Tab, Col, Row, Nav, NavItem, Panel, PanelGroup, Collapse, Button} from 'react-bootstrap';
 import {fetchCurrentUser} from '../actions/index';
-import SuggestionPost from '../components/suggestion-post';
+import PosterReplyPost from '../components/poster-reply-post';
 import StarRatingComponent from 'react-star-rating-component';
 
 class RecipeReviewDetail extends Component {
@@ -37,24 +37,24 @@ class RecipeReviewDetail extends Component {
                             value={this.props.review.rate}
                         />
                       </p>
-                        {this.props.review.suggestion ? 
+                        {this.props.review.reply ? 
                             <p>
-                                {"poster's suggestion: " + this.props.review.suggestion}
+                                {"poster's reply: " + this.props.review.reply}
                             </p>
                             :
                             <p>
-                                poster's suggestion: None
+                                poster's reply: None
                             </p>
                         }
                 </Panel>
-                {this.props.user != null && this.props.uname == this.props.user.uname && this.props.review.suggestion == null ?
+                {this.props.user != null && this.props.uname == this.props.user.uname && this.props.review.reply == null ?
                     <div>
                         <Button onClick={() => this.setState({ collapse_open: !this.state.collapse_open })}>
-                                Add Suggestion!
+                                Add reply!
                         </Button>
                         <Collapse in={this.state.collapse_open}>
                             <div>
-                                <SuggestionPost revid={this.props.review.revid}/>
+                                <PosterReplyPost revid={this.props.review.revid}/>
                             </div>
                         </Collapse>
                     </div>
@@ -69,4 +69,4 @@ class RecipeReviewDetail extends Component {
 }   
 
 
-export default RecipeReviewDetail;        
+export default RecipeReviewDetail;
