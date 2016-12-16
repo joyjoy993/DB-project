@@ -364,6 +364,12 @@ class GroupJoinResource(Resource):
 
 class PostRecipeResource(Resource):
 
+    def check(self, ingredients, unitid):
+        for ingredient in ingredients:
+            if ingredient.unitid == unitid:
+                return True
+        return False
+
     def post(self):
         try:
             #print request.get_json(force=True)
@@ -396,8 +402,8 @@ class PostRecipeResource(Resource):
                 newIngredient = None
 
                 newUnit = Unit.query.filter_by(unitname=i['unit']).first()
-                newIngredient = Ingredient.query.filter_by(ingname=i['ingredient']).first()
-                checkUnit = newUnit
+                newIngredient = Ingredient.query.filter_by(ingname=i['ingredient']).all()
+                print newIngredient
 
                 if newUnit == None:
                     form_attributes_unit = {'unitname': i['unit'], 'unittype': i['solid']}
@@ -406,14 +412,18 @@ class PostRecipeResource(Resource):
                     db.session.commit()
                     db.session.refresh(newUnit)
 
-                if (newIngredient == None) or (newIngredient != None and checkUnit == None):
+                flag = self.check(newIngredient, newUnit.unitid)
+
+                if (newIngredient == None) or (newIngredient != None and flag == False):
                     form_attributes_ingredient = {'ingname': i['ingredient'], 'unitid': newUnit.unitid}
                     newIngredient = Ingredient(**form_attributes_ingredient)
                     db.session.add(newIngredient)
                     db.session.commit()
                     db.session.refresh(newIngredient)
 
-                form_attributes_Recipecontainingredient = {'rid': newrecipe.rid, 'ingid': newIngredient.ingid, 'amount': i['amount']}
+                correspondIngredient = Ingredient.query.filter_by(ingname=i['ingredient'], unitid=newUnit.unitid).first()
+
+                form_attributes_Recipecontainingredient = {'rid': newrecipe.rid, 'ingid': correspondIngredient.ingid, 'amount': i['amount']}
                 newRecipecontainingredient = Recipecontainingredient(**form_attributes_Recipecontainingredient)
                 db.session.add(newRecipecontainingredient)
                 db.session.commit()
