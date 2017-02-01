@@ -1,4 +1,4 @@
-# DB-project
+# DB-project(CS6083)
 A recipe website with react and flask
 
 1) install requirments: 
